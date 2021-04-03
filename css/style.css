@@ -1,0 +1,277 @@
+ol,
+ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#nav {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    list-style: none;
+    flex-basis: 80%;
+}
+.logo {
+    margin-left: 30px;
+    width: 60px;
+    border-radius: 50%;
+    height: 50px;
+    margin-right: 20px;
+}
+
+#nav li {
+    padding: 20px 10px;
+    cursor: pointer;
+}
+#nav li a {
+    text-decoration: none;
+    color: #eee;
+    font-size: medium;
+}
+#nav li:hover {
+    background-color: black;
+    transition: all 0.9s;
+}
+#nav li:active {
+    background-color: black;
+    transition: all 0.9s;
+}
+.navbar {
+    display: flex;
+    background-color: #666;
+    align-items: center;
+}
+#right-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+#right-menu .cart {
+    cursor: pointer;
+    padding: 20px 20px 20px 10px;
+}
+#right-menu .cart a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 110%;
+}
+#right-menu .cart:hover {
+    background-color: black;
+    transition: all 0.9s;
+}
+
+.signin {
+    color: #e9b7b7;
+    text-decoration: none;
+    display: block;
+    padding: 20px 20px 20px 10px;
+}
+.logged {
+    padding: 10px;
+    position: relative;
+}
+.name {
+    color: #f64f59;
+}
+.signout {
+    cursor: pointer;
+    text-decoration: none;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+}
+
+.banner img {
+    width: 355px;
+    margin-bottom: 5px;
+}
+.mt-5 {
+    margin-top: 50px;
+}
+.mt-2 {
+    margin-top: 20px;
+}
+.mr-5 {
+    margin-right: 10px;
+}
+.mb-5 {
+    margin-bottom: 5px;
+}
+.ml-5 {
+    margin-left: 10px;
+}
+.mt-3 {
+    margin-top: 3px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    background-color: #ddd;
+    padding: 10px;
+}
+
+.social-media {
+    list-style: none;
+    display: flex;
+}
+
+.social-media li {
+    padding: 20px 10px 0px 0px;
+}
+
+.social-media li a {
+    color: rgb(21, 21, 49);
+}
+
+.ml-2 {
+    margin-left: 3px;
+}
+
+.infomation {
+    list-style: none;
+}
+.infomation li {
+    padding: 5px;
+}
+.infomation li a {
+    padding: 5px;
+    text-decoration: none;
+}
+
+.icon {
+    display: none;
+    color: white;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 150%;
+    border: 1px solid #eee;
+    padding: 2px 10px;
+    border-radius: 5px;
+}
+
+.list-item {
+    background-color: #eee;
+    padding: 20px;
+}
+
+.bill {
+    background-color: #eee;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total {
+    margin-right: 20px;
+}
+.buy-it span {
+    font-size: 13px;
+}
+
+.buy-it {
+    padding: 5px 0px;
+    background-color: tomato;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+}
+.buy-it button {
+    border: none;
+    background-color: tomato;
+    font-size: 20px;
+}
+.service {
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    padding: 5px 10px;
+}
+.service h5 {
+    font-style: italic;
+}
+.service div {
+    margin-bottom: 3px;
+}
+/*LOGIN , REGISTER */
+.form form {
+    width: 30%;
+    /* margin: 50px auto; */
+    padding: 20px 50px;
+    background-color: #eee;
+    border-radius: 5px;
+}
+.form input {
+    border: none;
+    margin-left: 3px;
+}
+.form textarea {
+    border: none;
+    resize: none;
+}
+.form {
+    background-image: linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form legend {
+    text-align: center;
+}
+.form i {
+    margin-right: 10px;
+}
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register,
+.redirectLogin {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.register a,
+.redirectLogin a {
+    color: rgb(158, 27, 27);
+    margin-left: 5px;
+}
+.login,
+.btnRegister {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: none;
+    background-image: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+    color: wheat;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+/*PRODUCTS*/
+a.thumbnail {
+    text-decoration: none;
+}
+
+a.thumbnail:hover img {
+    transform: scale(1.05);
+}
+a.thumbnail:hover .caption h5 {
+    color: rgb(117, 117, 197);
+}
+
+a.thumbnail img {
+    height: 150px;
+}

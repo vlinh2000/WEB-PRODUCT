@@ -1,0 +1,30 @@
+@media screen and (max-width: 600px) {
+    .navbar div#nav {
+        display: none;
+    }
+
+    .navbar div#right-menu {
+        display: none;
+    }
+    .navbar a.icon {
+        color: white;
+        display: block;
+    }
+}
+@media screen and (max-width: 600px) {
+    .navbar.responsive {
+        position: relative;
+    }
+    .navbar.responsive {
+        display: block;
+    }
+    .navbar.responsive a.icon {
+        color: white;
+    }
+    .navbar.responsive div#nav {
+        display: block;
+    }
+    .navbar.responsive div#right-menu {
+        display: block;
+    }
+}
