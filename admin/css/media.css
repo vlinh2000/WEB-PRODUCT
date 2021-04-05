@@ -1,0 +1,13 @@
+@media screen and (max-width: 600px) {
+    #nav li > .icon {
+        position: absolute;
+        right: 15px;
+        top: 40%;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .navbar > #navRight {
+        display: none;
+    }
+}

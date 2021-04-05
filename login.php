@@ -4,9 +4,9 @@ if(isset($_POST['txtUsername'])){
     $sql = "select * from KhachHang where UserName='". $_POST['txtUsername']."'";
     $result = mysqli_query($conn,$sql);
     $row =mysqli_fetch_array($result);
-    echo $row['PassWord'];
+    //echo $row['PassWord'];
     if(isset($row)){
-          if($_POST['txtPassword'] == $row['PassWord'] ){
+          if(md5($_POST['txtPassword']) == $row['PassWord'] ){
             session_start();
            $_SESSION['ID']= $row['MSKH'];
            $_SESSION['FullName'] = $row['HoTenKH'];
@@ -44,7 +44,7 @@ if(isset($_POST['txtUsername'])){
             </div>
             <div class="form-group ">
                 <i class="fas fa-lock"></i>
-                <input type="text" class="form-control" name="txtPassword" placeholder="Password">
+                <input type="password" class="form-control" name="txtPassword" placeholder="Password">
             </div>
             <button type="submit" class="login">Đăng nhập</button>
             <div class="register">

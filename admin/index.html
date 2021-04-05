@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping every day.</title>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/media.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- HEADER-->
+        <div id="header">
+            <div class="navbar" id="myTopnav">
+                <div id="nav">
+                    <li>
+                        <a href="#">ADMIN</a>
+                    </li>
+                    <li id="control">
+                        <i class="fa fa-bars icon"></i>
+                    </li>
+                </div>
+                <div id="navRight">
+                    <li>
+                        <form action="" method="POST" class="form-inline" role="form">
+                            <div class="form-group">
+                                <label class="sr-only" for="">label</label>
+                                <input type="email" class="form-control" id="" placeholder="Search ">
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </li>
+                    <li>
+                        <i class="fa fa-user iconUser"></i>
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 padding-0">
+                    <div class="sidebar">
+                        <ul class="core">
+                            <p>CORE</p>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span class="active">Dash board</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="menu">
+                            <p>MENU</p>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-user"></i>
+                                    <span>Quản lí nhân viên</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-list-alt"></i>
+                                    <span>Quản lí khách hàng</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-gift"></i>
+                                    <span>Quản lí hàng hóa</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-receipt"></i>
+                                    <span>Quản lí loại hàng hóa</span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                        <ul class="menu">
+                            <p>ADDONS</p>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-user"></i>
+                                    <span>Linh</span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 padding-0">
+                    <div class="main">
+                        <h1 class="title">Quản lí hàng hóa</h1>
+                        <!-- <h1 class="title">Dashboard</h1>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-8 col-sm-6 col-md-3 col-lg-3 view-total">
+                                    <a href="#" class="bill">
+                                        <div class="view-up">
+                                            <i class="fas fa-wallet icon-view"></i>
+                                            <div>
+                                                <p>Số đơn hàng hôm nay</p>
+                                                <p class="total">
+                                                    <span class="label label-danger">50</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="view-detail">
+                                            <span>View Details</span>
+                                            <i class="fas fa-angle-right"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-8 col-sm-6 col-md-3 col-lg-3 view-total">
+                                    <a href="#" class="revenue">
+                                        <div class="view-up">
+                                            <i class="fas fa-money-bill-alt icon-view"></i>
+                                            <div>
+                                                <p>Doanh thu bán hàng</p>
+                                                <p class="total">
+                                                    <span class="label label-success">10.500.000đ</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="view-detail">
+                                            <span>View Details</span>
+                                            <i class="fas fa-angle-right"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-8 col-sm-6 col-md-3 col-lg-3 view-total">
+                                    <a href="#" class="new-account">
+                                        <div class="view-up">
+                                            <i class="fas fa-users icon-view"></i>
+                                            <div>
+                                                <p>Khách hàng mới</p>
+                                                <p class="total">
+                                                    <span class="label-purple">50</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="view-detail">
+                                            <span>View Details</span>
+                                            <i class="fas fa-angle-right"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-8 col-sm-6 col-md-3 col-lg-3 view-total">
+                                    <a href="#" class="follow">
+                                        <div class="view-up">
+                                            <i class="fas fa-mobile-alt icon-view"></i>
+                                            <div>
+                                                <p>TOP IPhone bán chạy nhất</p>
+                                                <p class="total">
+                                                    <span class="label-warn">50</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="view-detail">
+                                            <span>View Details</span>
+                                            <i class="fas fa-angle-right"></i>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                            </div>
+                        </div> -->
+
+                        <!--QUẢN LÍ KHÁCH HÀNG-->
+                        <!-- <div class="container">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">KHÁCH HÀNG</div>
+                                <div class="panel-body">
+                                    <p>Cập nhật từ ngày 18-3-2021</p>
+                                </div>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>MSKH</th>
+                                            <th>HoTenKH</th>
+                                            <th>SoDienThoai</th>
+                                            <th>Email</th>
+                                            <th>UserName</th>
+                                            <th>PassWord</th>
+                                            <th>DiaChi</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>01</td>
+                                            <td>Trương Việt Linh</td>
+                                            <td>0387746550</td>
+                                            <td>vietlinhst2013@gmail.com</td>
+                                            <td>linh1234</td>
+                                            <td>3213zxcczsdfds</td>
+                                            <td>Cái côn</td>
+                                            <td>
+                                                <a href="#"><i
+                                                        class="fas fa-pencil-alt mr-3 action-Icon-Update"></i></a>
+                                                <a href="#"><i class="fas fa-trash-alt action-Icon-Delete"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div> -->
+
+                        <!--MANAGER GOODS TYPE -->
+
+
+                        <!-- <div class="container">
+                            <div class="add">
+                                <a type="button" href="#" class="btn btn-success add-Icon">
+                                    <i class="fas fa-plus-square"></i>
+                                    <span> Thêm</span>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="container">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">LOẠI HÀNG HÓA</div>
+                                <div class="panel-body">
+                                    <p>Cập nhật từ ngày 18-3-2021</p>
+                                </div>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>STT</th>
+                                            <th>MaLoaiHang</th>
+                                            <th>TenLoaiHang</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>01</td>
+                                            <td>LH01</td>
+                                            <td>Trương Việt Linh</td>
+                                            <td>
+                                                <a href="#"><i
+                                                        class="fas fa-pencil-alt mr-3 action-Icon-Update"></i></a>
+                                                <a href="#"><i class="fas fa-trash-alt action-Icon-Delete"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                        </div> -->
+
+                        <!--MANAGER GOODS -->
+
+                        <div class="container formAdd">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Thêm hàng hóa</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <form action="" method="POST" role="form">
+
+                                        <div class="row">
+
+                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                <!-- <div class="form-group">
+                                                    <label>MSHH</label>
+                                                    <input type="text" class="form-control">
+                                                </div> -->
+                                                <div class="form-group">
+                                                    <label>TenHH</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>MaLoaiHang</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>QuyCach</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Gia</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>SoLuongHang</label>
+                                                    <input type="number" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Ghichu</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+                                                <div class="form-group">
+                                                    <label>ManHinh</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>HeDieuHanh</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>CamSau</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>CamTruoc</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Chip</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Ram</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+                                                <div class="form-group">
+                                                    <label>Rom</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Sim</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Pin</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Link ảnh sản phẩm</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Lưu</button>
+                                        <button class="btn btn-warning">Thoát</button>
+                                    </form>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="container">
+                            <div class="add">
+                                <button onclick="add()" class="btn btn-success add-Icon">
+                                    <i class="fas fa-plus-square"></i>
+                                    <span> Thêm</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="container-fluid goods">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">HÀNG HÓA</div>
+                                <div class="panel-body">
+                                    <span class="label label-warning">
+                                        <a href="view-all-goods.html">
+                                            <i class="fas fa-search"></i>
+                                            Xem bảng đầy đủ
+                                        </a>
+                                    </span>
+                                </div>
+                                <table class="table">
+                                    <thead>
+                                        <tr class="category">
+                                            <th>STT</th>
+                                            <th>MSHH</th>
+                                            <th>TenHH</th>
+                                            <th>HinhAnh</th>
+                                            <th>MaLoaiHang</th>
+                                            <th>Gia</th>
+                                            <th>SoLuongHang</th>
+                                            <th>HeDieuHanh</th>
+                                            <th>Ghichu</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>01</td>
+                                            <td>LH01</td>
+                                            <td class="product-image">
+                                                <img src="https://didongthongminh.vn/upload_images/2018/10/iphone7-plus-black-1.png"
+                                                    alt="ip7plus">
+                                            </td>
+                                            <td>01</td>
+                                            <td>12.999.999</td>
+                                            <td>100</td>
+                                            <td>..</td>
+                                            <td>..</td>
+                                            <td>
+                                                <i class="fas fa-pencil-alt mr-3 action-Icon-Update"
+                                                    onclick="Update(this)"></i>
+                                                <i class="fas fa-trash-alt action-Icon-Delete"
+                                                    onclick="Delete(this)"></i>
+                                            </td>
+                                        </tr>
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Latest compiled and minified JavaScript -->
+
+    <script src="../lib/bootstrap-3.3.7-dist/js/jquery-360.min.js"> </script>
+    <script src="../lib/fontawesome-free-5.15.3-web/js/all.min.js"></script>
+    <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script>
+        function save() {
+            // var form = $(".form");
+            // form.addEventListener('submit', (e) => {
+            //     e.preventDefault();
+            // });
+            // $(".formAdd").hide();
+            // form.submit();
+
+        }
+        function add() {
+            //show and hide form 
+            $(".formAdd").show();
+            $("#wrapper").addClass("background");
+        }
+
+        function Update(idProduct) {
+            // code php to get data by id
+        }
+        function Delete(idProduct) {
+            if (confirm(`Bạn có chắc muốn xóa sản phẩm với ID là ${idproduct} ?`)) {
+                // code php to delete data by id
+                console.log('ok');
+            } else return;
+
+        }
+    </script>
+
+</body>
+
+</html>

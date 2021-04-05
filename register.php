@@ -9,7 +9,7 @@ if(isset($_POST['txtName'])){
         . $_POST['txtPhone'] . "','"
         . $_POST['txtEmail'] . "','" 
         . $_POST['txtUsername'] . "','" 
-        . $_POST['txtPassword'] ."')" ; 
+        . md5($_POST['txtPassword']) ."')" ; 
     if (mysqli_query($conn, $sql)) {
         echo "<script type='text/javascript'>alert('Tạo tài khoản " . $_POST['txtUsername'] . " thành công !');</script>";
      } else {
