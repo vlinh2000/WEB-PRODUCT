@@ -1,13 +1,21 @@
 @media screen and (max-width: 600px) {
-    #nav li > .icon {
-        position: absolute;
-        right: 15px;
-        top: 40%;
+    #nav #control > .icon {
+        display: none;
     }
 }
 
 @media screen and (max-width: 780px) {
     .navbar > #navRight {
         display: none;
+    }
+    #sidebar {
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    #sidebar {
+        position: relative;
+        width: auto;
     }
 }

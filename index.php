@@ -1,15 +1,10 @@
-   <?php
-//    session_start();
-//    if(!isset($_SESSION['ID'])){
-//     header("location: login.php");
-//    }
-   ?>
+
    <?php
    include_once './header.php'
    ?>
         <!--CAROUSEL-->
-        <div class="container mt-5">
-            <div class="row ">
+        <div class="container mt-10">
+            <div class="row">
                 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 mb-5">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
@@ -36,6 +31,7 @@
                                     style="width:100%;">
                             </div>
                         </div>
+                        
 
                         <!-- Left and right controls -->
                         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -61,7 +57,6 @@
 
 
             </div>
-
         </div>
         
         <!-- PRODUCTS-->
@@ -69,33 +64,28 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-
-                        Danh sách sản phẩm
+                        ĐIỆN THOẠI
                     </h3>
                 </div>
                 <div class="panel-body">
                    <div class="row">
-                        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                                <a href="productDetail.php?id=1" class="thumbnail">      
-                                        <img src="https://didongthongminh.vn/upload_images/2018/10/iphone7-plus-black-1.png"
-                                            alt="ip7plus">
-                                        <div class="caption">
-                                            <h5>IPhone 7 Plus Cũ 256Gb Nguyên Bản Đẹp Như Mới</h5>
-                                            <span class="label label-success">7,090,000 VNĐ ₫</span>
-                                        </div>
-                                    </a>
-
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                                <a href="productDetail.php?id=1" class="thumbnail">      
-                                        <img src="https://phucanhcdn.com/media/product/40798_iphone_12_pro_max_pacific_blue.jpg"
-                                            alt="ip7plus">
-                                        <div class="caption">
-                                            <h5>Iphone 12 pro max 128Gb Nguyên Bản Đẹp Như Mới</h5>
-                                            <span class="label label-success">7,090,000 VNĐ ₫</span>
-                                        </div>
-                                    </a>
-                        </div>
+                   <?php 
+                                        include './mysql.php';
+                                        $sql = 'select MSHH,TenHH,Gia,HinhAnh from HangHoa';
+                                        $result = mysqli_query($conn,$sql);
+                                        while($row=$result->fetch_assoc()){
+                                            echo '<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">';
+                                            echo '<a href="productDetail.php?MSHH='.$row['MSHH'].'" class="thumbnail"> 
+                                                        <img src="'.$row['HinhAnh'].'"alt="'.$row['MSHH'].'"> 
+                                                        <div class="caption">
+                                                            <h5>'.$row['TenHH'].'</h5>
+                                                            <span class="label label-success">'.$row['Gia'].' VNĐ ₫</span>
+                                                        </div>   
+                                                   </a>';
+                                            echo '</div>';
+                                        }
+                                        mysqli_close($conn);
+                                        ?>                                                          
                    </div>
 
                 </div>
@@ -106,8 +96,6 @@
                     <li><a href="#">1</a></li>
                     <li><a href="#">2</a></li>
                     <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
                     <li><a href="#">&raquo;</a></li>
                 </ul>
             </div>

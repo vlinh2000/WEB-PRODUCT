@@ -54,31 +54,38 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>01</td>
-                        <td>LH01</td>
-                        <td class="product-image">
-                            <img src="https://didongthongminh.vn/upload_images/2018/10/iphone7-plus-black-1.png"
-                                alt="ip7plus">
-                        </td>
-                        <td>01</td>
-                        <td>12.999.999</td>
-                        <td>100</td>
-                        <td>..</td>
-                        <td>..</td>
-                        <td>..</td>
-                        <td>100</td>
-                        <td>..</td>
-                        <td>..</td>
-                        <td>..</td>
-                        <td>100</td>
-                        <td>..</td>
-                        <td>..</td>
-                        <td>..</td>
-
-                    </tr>
-
+                <?php
+                                        include '../mysql.php';
+                                        $sql='select * from HangHoa';
+                                        $result = mysqli_query($conn,$sql);
+                                        $STT=1;
+                                        while($row = $result->fetch_assoc()){
+                                          echo '<tr>' ;
+                                          echo '<td>'.$STT.'</td>';
+                                          echo '<td>'.$row['MSHH'].'</td>';
+                                          echo '<td>'.$row['TenHH'].'</td>';
+                                          echo ' <td class="product-image">
+                                                    <img src="'.$row['HinhAnh'].'"
+                                                        alt="'.$row['MSHH'].'">
+                                                </td>';
+                                          echo '<td>'.$row['MaLoaiHang'].'</td>';
+                                          echo '<td>'.$row['Gia'].'</td>';
+                                          echo '<td>'.$row['SoLuongHang'].'</td>';
+                                          echo '<td>'.$row['Ghichu'].'</td>';
+                                          echo '<td>'.$row['QuyCach'].'</td>';
+                                          echo '<td>'.$row['ManHinh'].'</td>';
+                                          echo '<td>'.$row['HeDieuHanh'].'</td>';
+                                          echo '<td>'.$row['CamSau'].'</td>';
+                                          echo '<td>'.$row['CamTruoc'].'</td>';
+                                          echo '<td>'.$row['Chip'].'</td>';
+                                          echo '<td>'.$row['Ram'].'</td>';
+                                          echo '<td>'.$row['Rom'].'</td>';
+                                          echo '<td>'.$row['Sim'].'</td>';
+                                          echo '<td>'.$row['Pin'].'</td>';
+                                          echo '</tr>';  
+                                          $STT++;
+                                        }                                                                  
+                                        ?>              
                 </tbody>
             </table>
         </div>

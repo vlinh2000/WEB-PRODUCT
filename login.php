@@ -52,12 +52,5 @@ if(isset($_POST['txtUsername'])){
             </div>
         </form>
     </div>
-
-
-
-
 </body>
-
-
-
 </html>

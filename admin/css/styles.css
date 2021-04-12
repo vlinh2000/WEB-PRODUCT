@@ -4,12 +4,19 @@
     box-sizing: border-box;
 }
 #wrapper {
-    overflow-x: hidden;
+    position: relative;
 }
 ol,
 ul {
     margin-top: 0px;
     margin-bottom: 0px;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    width: 100%;
 }
 
 #nav {
@@ -49,7 +56,6 @@ ul {
 .navbar {
     background-color: #343a40;
     align-items: center;
-    position: relative;
     display: flex;
     margin-bottom: 0 !important;
     border-radius: 0;
@@ -61,6 +67,10 @@ ul {
 #control {
     padding-left: 170px !important;
 }
+
+.section {
+    margin-top: 50px !important;
+}
 .iconUser {
     color: rgba(255, 255, 255, 0.5);
     font-size: 120%;
@@ -68,13 +78,16 @@ ul {
 .sidebar {
     height: 100vh;
     background-color: #212529;
+    position: fixed;
+    width: 250px;
 }
+
 .main {
 }
-.container-fluid {
+/* .container-fluid {
     padding: 0;
     margin: 0;
-}
+} */
 .core {
 }
 .sidebar ul p {
@@ -112,9 +125,8 @@ h1 {
     margin-bottom: 30px;
 }
 .main {
-    background-color: #eee;
+    /* background-color: #eee; */
     height: 100vh;
-    position: relative;
 }
 .padding-0 {
     padding: 0;
@@ -194,9 +206,16 @@ h1 {
     font-size: 80%;
     border-radius: 5px;
 }
-.active {
-    color: #fff;
+.active > a > span {
+    color: #d679db;
+    font-weight: bold;
 }
+/* .active > a ::after {
+    content: " ";
+    display: block;
+    width: 90%;
+    border-bottom: 2px solid #d679db;
+} */
 /*MANAGER CUSTOMER*/
 .mr-3 {
     margin-right: 5px;
@@ -241,8 +260,26 @@ h1 {
     display: none;
     z-index: 2;
 }
-.background {
-    position: relative;
-    filter: brightness(51%)
+.w-50 {
+    width: 50%;
+}
+.background::after {
+    content: " ";
+    display: block;
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(31, 34, 46, 0.8);
     z-index: 1;
+}
+.add-goods-header {
+    display: flex;
+    justify-content: space-between;
+}
+.icon-close {
+    font-size: 150%;
+    color: #ff002f;
+    cursor: pointer;
 }
