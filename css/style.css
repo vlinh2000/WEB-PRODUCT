@@ -25,7 +25,7 @@ ul {
 }
 
 .search-navbar {
-    flex-basis: 60%;
+    flex-basis: 70%;
     padding-left: 30px;
 }
 
@@ -34,7 +34,7 @@ ul {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border: none;
-    width: 70%;
+    width: 50%;
 }
 .form-search:focus {
     border: none;
@@ -46,6 +46,14 @@ ul {
     color: #fff;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+/* .input-search:focus {
+    box-shadow: none;
+    border: none;
+} */
+
+.products-in-cart img {
+    max-height: 200px;
 }
 
 #header {
@@ -64,7 +72,6 @@ ul {
 .cart {
     font-size: 110%;
     position: relative;
-    flex-basis: 14%;
 }
 .cart > a {
     text-decoration: none;
@@ -78,25 +85,51 @@ ul {
     content: " ";
     display: block;
     position: absolute;
-    right: 6%;
-    top: -5%;
+    right: 8px;
+    top: -10px;
     width: 0;
     height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-bottom: 10px solid green;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #eee;
 }
 .products-in-cart {
     position: absolute;
     top: 150%;
-    right: 85%;
-    width: 200px;
-    height: 200px;
-    background-color: green;
+    right: -10px;
     display: none;
+    width: 400px;
+    height: auto;
+    background-color: #eee;
+    /* box-shadow: 1px 1px 1px 1px #ee4e2e; */
+}
+
+.products-in-cart .products {
+    list-style: none;
+    padding: 10px 20px;
+}
+.products-in-cart .products > p {
+    color: #aaa;
+}
+.products-in-cart .products .product {
+    display: flex;
+    margin-bottom: 20px;
+}
+.products-in-cart .products .product > img {
+    vertical-align: top;
+}
+.products-in-cart .products .product > .name-phone {
+    padding-left: 5px;
+    flex-grow: 1;
+    color: #222;
+}
+.products-in-cart .products .product .price-phone {
+    font-size: 70%;
+    color: #ee4e2e;
 }
 .in-out {
     padding-right: 20px;
+    padding-left: 30px;
 }
 .in-out > a {
     color: #e9b7b7;
@@ -108,12 +141,52 @@ ul {
     border-bottom-right-radius: 5px;
 }
 .logged {
-    padding: 10px;
+    padding-left: 10px;
+    display: flex;
     position: relative;
+    cursor: pointer;
 }
 .name {
-    color: #f64f59;
+    margin-left: 5px;
+    color: #e8e23a;
 }
+
+.logged:hover .account {
+    display: block;
+}
+.account::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    right: 8px;
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #eee;
+}
+.account {
+    display: none;
+    position: absolute;
+    bottom: -100px;
+    right: 0;
+    background-color: #eee;
+    /* padding: 10px 0px; */
+    width: 160px;
+}
+.account > div > a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 20px;
+    display: block;
+    font-weight: 300;
+}
+.account > div:hover a {
+    background-color: #fff;
+    color: green;
+}
+
 .signout {
     cursor: pointer;
     text-decoration: none;

@@ -10,6 +10,7 @@ if(isset($_POST['txtUsername'])){
             session_start();
            $_SESSION['ID']= $row['MSKH'];
            $_SESSION['FullName'] = $row['HoTenKH'];
+           $_SESSION['UserName'] = $row['UserName'];
            header('location:index.php');
           }else{
             echo "<script type='text/javascript'>alert('Tài khoản hoặc mật khẩu không chính xác !');</script>";

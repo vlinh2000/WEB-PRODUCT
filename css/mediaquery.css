@@ -1,30 +1,42 @@
 @media screen and (max-width: 600px) {
-    .navbar div#nav {
-        display: none;
+    .navbar {
+        /* flex-direction: column;
+        justify-content: center;
+        align-items: center; */
+        display: block;
+    }
+    .navbar > div > a.mt-3 {
+        margin-left: 130px;
+    }
+    .navbar > .search-navbar {
+        padding: 0 40px;
+    }
+    .navbar > .search-navbar > .form-search {
+        display: flex;
+    }
+    .navbar > .search-navbar > .form-search > input {
+        width: 100%;
+    }
+    .navbar > .cart {
+        padding-top: 20px;
+        display: inline;
+        float: left;
+        margin-left: 40%;
+        padding-bottom: 10px;
+    }
+    .navbar > .in-out {
+        margin-right: 20%;
+        padding-top: 20px;
+        display: inline;
+        float: right;
+        padding-bottom: 10px;
+    }
+    .main {
+        margin-top: 100px;
     }
 
-    .navbar div#right-menu {
-        display: none;
-    }
-    .navbar a.icon {
-        color: white;
-        display: block;
-    }
-}
-@media screen and (max-width: 600px) {
-    .navbar.responsive {
-        position: relative;
-    }
-    .navbar.responsive {
-        display: block;
-    }
-    .navbar.responsive a.icon {
-        color: white;
-    }
-    .navbar.responsive div#nav {
-        display: block;
-    }
-    .navbar.responsive div#right-menu {
-        display: block;
+    .products-in-cart {
+        right: -220px;
+        top: 95%;
     }
 }

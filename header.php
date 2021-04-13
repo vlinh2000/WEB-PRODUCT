@@ -27,29 +27,39 @@
                 </div>
                     <div class="search-navbar">
                     <form action="" method="POST" role="form" class='form-search'>
-                        <input type="text" placeholder="Gõ tên sản phẩm cần tìm (VD: iPhone 12, Galaxy S21)" required minlength='1' maxlength='50'>
+                        <input type="text" class='input-search' placeholder="Gõ tên sản phẩm cần tìm (VD: iPhone 12, Galaxy S21)" required minlength='1' maxlength='50'>
                         <button type="submit">
                             <i class='fa fa-search'></i>
                         </button>
                         </form>
                     </div>
-               
-                
                     <div class="cart">
                         <a href="cart.php"><i class="fas fa-cart-plus fa-lg"></i></a>
                         <div class="products-in-cart">
-                            <ul>
-                                <li>
-                                    aa
+                            <!-- <img src="./img/null-cart.png" alt="photo"> -->
+                            <ul class='products'>
+                                <p>Sản phẩm mới thêm</p>
+                                <li class='product'>
+                                    <img width='40px' heigh='50px' src="https://cdn.tgdd.vn/Products/Images/42/226099/samsung-galaxy-z-fold-2-vang-dong-600x600.jpg" alt="pd1">
+                                    <span class='name-phone'>Điện thoại Samsung Galaxy A02 </span> 
+                                    <span class='price-phone'>₫ 10.000.000</span>
                                 </li>
-                                <li>
-                                    aa
+                                <li class='product'>
+                                    <img width='40px' heigh='50px' src="https://cdn.tgdd.vn/Products/Images/42/226099/samsung-galaxy-z-fold-2-vang-dong-600x600.jpg" alt="pd1">
+                                    <span class='name-phone'>Điện thoại Samsung Galaxy Z Fo</span> 
+                                    <span class='price-phone'>₫ 8.000.000</span>
                                 </li>
-                                <li>
-                                    aa
+                                <li class='product'>
+                                    <img width='40px' heigh='50px' src="https://cdn.tgdd.vn/Products/Images/42/226099/samsung-galaxy-z-fold-2-vang-dong-600x600.jpg" alt="pd1">
+                                    <span class='name-phone'>Xiaomi Redmi Note 10 Pro MFF</span> 
+                                    <span class='price-phone'>₫ 7.000.000</span>
                                 </li>
-
+                                <li class='product'>
+                                   31 ki tu
+                                </li>
+                                <a href="cart.php" class='btn btn-danger'>Xem giỏ hàng</a>
                             </ul>
+                            
                         </div>
                     </div>
                     <div class='in-out'>
@@ -57,17 +67,18 @@
                         session_start();
                         if(isset($_SESSION['ID'])){
                             echo "<div class='logged'>
-                                        <span class='name'>".$_SESSION['FullName']."</span>
-                                        <a class='signout' href='logout.php'><i class='fas fa-sign-out-alt'></i></a>
+                                         <i class='fas fa-user-circle' style='font-size:130%; color: #EEE'  ></i>
+                                        <span class='name mr-2'>".$_SESSION['UserName']."</span>
+                                        <div class='account'>
+                                            <div><a href='#'>Tài khoản của tôi</a></div>
+                                            <div><a href='#'>Đơn mua</a></div> 
+                                            <div><a href='logout.php'>Đăng xuất</a></div> 
+                                        </div>
                                 </div>";
                         }else {
                             echo '<a href="login.php" class="signin">Đăng nhập</a>';
                         }
                         ?>
                     </div>
-                <a href="javascript:void(0);" class="icon" onclick="navResponsive()">
-                    <i class="fa fa-bars"></i>
-                </a>
-                    
             </div>
         </div>

@@ -3,7 +3,7 @@
    include_once './header.php'
    ?>
         <!--CAROUSEL-->
-        <div class="container mt-10">
+        <div class="container mt-10 main">
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 mb-5">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -16,10 +16,10 @@
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
-                            <div class="item active">
-                                <img src="https://cdn.tgdd.vn/2021/03/banner/renomarvel-800-300-800x300.png"
+                            <!-- <div class="item active">
+                                <img src="https://cf.shopee.vn/file/28a347e8313ff039529efeb8933bf62d_xxhdpi"
                                     alt="slide1" style="width:100%;">
-                            </div>
+                            </div> -->
 
                             <div class="item">
                                 <img src="https://cdn.tgdd.vn/2021/03/banner/800-300-800x300-23.png" alt="slide2"
