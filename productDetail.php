@@ -1,38 +1,30 @@
         <?php
             include_once './header.php';
         ?>
-        <div class="container">
+        <div class="container product-detail">
             <div class="row mt-2">
             <?php 
                 include './mysql.php';
                 $sql = 'select * from HangHoa where MSHH="'.$_GET['MSHH'].'"';
                 $result = mysqli_query($conn,$sql);
                 while($row=$result->fetch_assoc()){
-                    echo '<h3 class="name-product">'.$row['TenHH'].'</h3>';
-                    echo '<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-                                <div class="thumbnail">
-                                    <img src="'.$row['HinhAnh'].'">
-                                </div>
-                                <div class="price"><span class="label label-success">₫ '.$row['Gia'].' </span></div>
+                    echo '<h3 class="product-detail-name" id="product-detail-name">'.$row['TenHH'].'</h3><div class="line-down"></div>';
+                    echo '<div class="row"><div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 mb-4">
+                                <div class="view-product">
+                                <img src="'.$row['HinhAnh'].'" class="product-image" id="product-image">                              
+                                <div class="price" id="price">'.number_format($row['Gia'],0,',','.').' ₫ </div>
+                         </div>
                          </div>';
-                    echo '<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                         
+                    echo '<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 mb-4">
                             <div class="km">
-                                <div class="panel panel-success">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">KHUYẾN MÃI</h3>
-                                        <span style="font-size: 12px;">Giá và khuyến mãi dự kiến áp dụng đến
-                                            23:00
-                                            31/12/2021</span>
-                                    </div>
-                                    <div class="panel-body">
+                                        <h3 >KHUYẾN MÃI</h3>
                                         <div><i class="fas fa-check-circle" mr-2 style="color: green;"></i>
                                             <span>Giảm giá 1,000,000đ khi tham gia thu cũ đổi mới</span>
                                         </div>
                                         <a href="#">Xem chi tiết</a>
                                         <div>(*) Giá hoặc khuyến mãi không áp dụng đối với 1 số gói trả góp</div>
                                     </div>
-                                </div>
-                            </div>
                             <div class="service">
                                 <h5>Chọn thêm các dịch vụ</h5>
                                 <div>
@@ -49,18 +41,14 @@
                                 </div>
                             </div>
                             <div class="buy-it" onclick="addToCart(this.id)" id="'.$row['MSHH'].'">
-                                <button  >Mua ngay</button>
+                                <span>Mua ngay</span>
                                 <span>Giao hàng tận nơi miễn phí</span>
                             </div>
                         </div>';
-                    echo '<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                    echo '<div class="col-xs-12 col-sm-12 col-md-7 col-lg-5 mb-4">
                             <div class="tskt">
-                                <div class="panel panel-warning">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">THÔNG SỐ KỸ THUẬT</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        <table class="table table-hover">
+                                        <h3 >THÔNG SỐ KỸ THUẬT</h3>
+                                        <table class="table">
                                             <tbody>
                                                 <tr>
                                                     <td>Màn hình:</td>
@@ -101,8 +89,8 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                </div>
-                            </div>
+                                    </div>
+                                    </div>
                         </div>';
                 }
                 mysqli_close($conn);

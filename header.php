@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,19 +10,20 @@
     <title>Shopping every day.</title>
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="./lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="./lib/bootstrap-3.3.7-dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./lib/fontawesome-free-5.15.3-web/css/all.min.css">
     <link rel="stylesheet" href="./css/mediaquery.css">
 </head>
 
-<body>
+<body <?php if(!isset($_SESSION['Cart'])) echo 'onload="loadCart();"'; ?>>
 <div id="wrapper">
         <!-- HEADER-->
         <div id="header">
-            <div class="navbar" id="myTopnav">
+            <div class="new-navbar" id="myTopnav">
                <div>
-                    <a href="index.php" class="mt-3 mr-5">
+                    <a href="index.php">
                         <img class="logo"
                             src="./img/logo.png"
                             alt="logo">
@@ -35,40 +39,37 @@
                     </div>
                     <div class="cart">
                         <a href="cart.php"><i class="fas fa-cart-plus fa-lg"></i></a>
+                        <span class='triangle'></span>
                         <div class="products-in-cart">
-                            <!-- <img src="./img/null-cart.png" alt="photo"> -->
-                            <ul class='products'>
-                                <p>Sản phẩm mới thêm</p>
-                                <li class='product'>
-                                    <img width='40px' heigh='50px' src="https://cdn.tgdd.vn/Products/Images/42/226099/samsung-galaxy-z-fold-2-vang-dong-600x600.jpg" alt="pd1">
-                                    <span class='name-phone'>Điện thoại Samsung Galaxy A02 </span> 
-                                    <span class='price-phone'>₫ 10.000.000</span>
-                                </li>
-                                <li class='product'>
-                                    <img width='40px' heigh='50px' src="https://cdn.tgdd.vn/Products/Images/42/226099/samsung-galaxy-z-fold-2-vang-dong-600x600.jpg" alt="pd1">
-                                    <span class='name-phone'>Điện thoại Samsung Galaxy Z Fo</span> 
-                                    <span class='price-phone'>₫ 8.000.000</span>
-                                </li>
-                                <li class='product'>
-                                    <img width='40px' heigh='50px' src="https://cdn.tgdd.vn/Products/Images/42/226099/samsung-galaxy-z-fold-2-vang-dong-600x600.jpg" alt="pd1">
-                                    <span class='name-phone'>Xiaomi Redmi Note 10 Pro MFF</span> 
-                                    <span class='price-phone'>₫ 7.000.000</span>
-                                </li>
-                                <li class='product'>
-                                   31 ki tu
-                                </li>
-                                <a href="cart.php" class='btn btn-danger'>Xem giỏ hàng</a>
-                            </ul>
-                            
+                        <?php
+                            if(!isset($_SESSION['Cart']) || count($_SESSION['Cart']) ==0) echo '<img class="null-cart" src="./img/null-cart.png" alt="photo">';
+                            else{
+                               echo "<ul class='products'>
+                               <p>Sản phẩm mới thêm</p>" ;
+                               $i=0;
+                                foreach ($_SESSION['Cart'] as $product) {
+                                echo '<li class="product">
+                                    <img width="40px" heigh="50px" src="'.$product['HinhAnh'].'" alt="pd1">
+                                    <span class="name-phone">'.substr($product['TenHH'],0,31).'... </span> 
+                                    <span class="price-phone">₫ '.number_format((int)$product['Gia'],0,',','.').'</span>
+                                    </li>';
+                                    if($i==2) break;
+                                    $i++;
+                                }
+                                if(count($_SESSION['Cart']) > 3) echo "<p>còn ".(count($_SESSION['Cart']) - 3 ) ." sản phẩm trong giỏ hàng</p>";
+                                echo '<div class="view-cart"><a href="cart.php" class="btn btn-warning mt-3" >Xem giỏ hàng</a></div>
+                                </ul>';
+                            }
+                            ?>
                         </div>
                     </div>
                     <div class='in-out'>
                         <?php
-                        session_start();
                         if(isset($_SESSION['ID'])){
                             echo "<div class='logged'>
                                          <i class='fas fa-user-circle' style='font-size:130%; color: #EEE'  ></i>
                                         <span class='name mr-2'>".$_SESSION['UserName']."</span>
+                                        <span class='triangle'></span>
                                         <div class='account'>
                                             <div><a href='#'>Tài khoản của tôi</a></div>
                                             <div><a href='#'>Đơn mua</a></div> 

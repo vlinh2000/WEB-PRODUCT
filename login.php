@@ -10,6 +10,8 @@ if(isset($_POST['txtUsername'])){
             session_start();
            $_SESSION['ID']= $row['MSKH'];
            $_SESSION['FullName'] = $row['HoTenKH'];
+           $_SESSION['Phone']= $row['SoDienThoai'];
+           $_SESSION['DiaChi']= $row['DiaChi'];
            $_SESSION['UserName'] = $row['UserName'];
            header('location:index.php');
           }else{
