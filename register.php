@@ -1,20 +1,32 @@
 <?php
 if(isset($_POST['txtName'])){
     include 'mysql.php';
+    
     $MSKH = 'KH'. rand(0,99999999);
     $sql = "insert into KhachHang values('"
         . $MSKH . "','" 
         . $_POST['txtName'] . "','" 
-        . $_POST['txtAddress'] . "','" 
         . $_POST['txtPhone'] . "','"
         . $_POST['txtEmail'] . "','" 
         . $_POST['txtUsername'] . "','" 
-        . md5($_POST['txtPassword']) ."')" ; 
+        . md5($_POST['txtPassword']) . "','"
+        . $_POST['txtCompanyName'] .  "')"; 
+        $status=false;
     if (mysqli_query($conn, $sql)) {
-        echo "<script type='text/javascript'>alert('Tạo tài khoản " . $_POST['txtUsername'] . " thành công !');</script>";
+        $status=true;
      } else {
         echo "Error: " . $sql . "" . mysqli_error($conn);
      }
+
+
+     $MADC = 'DC' . rand(0,99999999);
+     $sql1 = "insert into DiaChiKH values('". $MADC . "','". $_POST['txtAddress'] . "','" . $MSKH . "')"; 
+     if (mysqli_query($conn, $sql1)) {
+        $status*=true;
+     } else {
+        echo "Error: " . $sql1 . "" . mysqli_error($conn);
+     }
+     if($status=true)  echo "<script type='text/javascript'>alert('Tạo tài khoản " . $_POST['txtUsername'] . " thành công !');</script>";
      mysqli_close($conn);
      //header('Location: login.php');
   }
@@ -62,6 +74,10 @@ if(isset($_POST['txtName'])){
             <div class="form-group " id='repass'>
                 <i class="fas fa-key" ></i>
                 <input type="password" class="form-control" name="txtRepassword" placeholder="Repassword" onchange="validate(this.value,'repass',checkSamePass('pass',this.value))">
+            </div>
+            <div class="form-group" id='TenCongTy'>
+                <i class="fas fa-building"></i>
+                <input type="text" class="form-control" name="txtCompanyName" placeholder="Company name" onchange="validate(this.value,'TenCongTy')">
             </div>
             <div class="form-group " id='address'>
                 <i class="fas fa-map-marker-alt"></i>

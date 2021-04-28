@@ -7,7 +7,7 @@
                                 <i class="fas fa-window-close icon-close" onclick="exit()"></i>
                             </div>
                             <div class="panel-body">
-                            <form action="goods-type-manager.php" method="POST" role="form">
+                            <form action="customer-manager.php" method="POST" role="form">
                                     <div class="form-group">
                                             <label>Họ Tên</label>
                                             <input type="text" class="form-control" name='HoTenKH' required>

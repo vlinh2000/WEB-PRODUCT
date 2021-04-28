@@ -71,8 +71,8 @@ session_start();
                                         <span class='name mr-2'>".$_SESSION['UserName']."</span>
                                         <span class='triangle'></span>
                                         <div class='account'>
-                                            <div><a href='#'>Tài khoản của tôi</a></div>
-                                            <div><a href='#'>Đơn mua</a></div> 
+                                            <div><a href='personal-info.php'>Tài khoản của tôi</a></div>
+                                            <div><a href='bill-done.php'>Đơn mua</a></div> 
                                             <div><a href='logout.php'>Đăng xuất</a></div> 
                                         </div>
                                 </div>";

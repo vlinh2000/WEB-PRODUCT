@@ -71,7 +71,7 @@
                                           echo '<td>'.$row['MaLoaiHang'].'</td>';
                                           echo '<td>'.$row['Gia'].'</td>';
                                           echo '<td>'.$row['SoLuongHang'].'</td>';
-                                          echo '<td>'.$row['Ghichu'].'</td>';
+                                          echo '<td>'.$row['GhiChu'].'</td>';
                                           echo '<td>'.$row['QuyCach'].'</td>';
                                           echo '<td>'.$row['ManHinh'].'</td>';
                                           echo '<td>'.$row['HeDieuHanh'].'</td>';

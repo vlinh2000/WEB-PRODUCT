@@ -1,8 +1,34 @@
 <?php
             include_once './header.php';
-        ?>
-        <?php
-       
+            if(!isset($_SESSION['ID'])) header("Location:login.php");
+            if(isset($_GET['action']) && $_GET['action']=="confirm") {
+                include './mysql.php';
+                $SoDonDH = 'HD' . rand(0,9999999);
+                $date = getdate();
+                $NgayDH = $date['year'] . "/" . $date['mon'] . "/" . $date['mday'] ;
+                $NgayGH = $date['year'] . "/" . $date['mon'] . "/" . ($date['mday'] + 2) ;
+                $total=30000;
+                        foreach ($_SESSION['Cart'] as $product) {
+                                $total+=(int)$product['Gia'] * (int)$product['SoLuong'];
+                        }
+                $sql = "insert into dathang (SoDonDH,MSKH,MSNV,NgayDH,NgayGH,TongTien) values('".$SoDonDH."','".$_SESSION['ID']."','NV01','".$NgayDH."','".$NgayGH."','".$total."')";
+                $status=false;
+                if(mysqli_query($conn,$sql)){
+                    $status = true;
+                }
+                foreach($_SESSION['Cart'] as $product){
+                $sql1 = "insert into chitietdathang values('".$SoDonDH."','".$product['MSHH']."','".$product['SoLuong']. "','".(int)$product['Gia']."','0')";
+                  if(mysqli_query($conn,$sql1)){
+                    $status = $status*true;
+                }
+            };
+            mysqli_close($conn);
+                if($status = true) {
+                    unset($_SESSION['Cart']);
+                    echo '<script>window.localStorage.clear();</script>';
+                    echo "<script>window.location.href='bill-done.php'</script>";
+                }
+            }
         ?>
         <div class="container pay-title"></i>Thanh toán</div>
         <div class="container address">
@@ -18,7 +44,7 @@
             </div>
         </div>
         <div class="container mt-3 item-in-cart"> 
-            <div class="cart-detail">
+            <div class="cart-detail-bill">
                 <table class="table list-item ">
                     <tr>
                         <th></th>
@@ -71,7 +97,7 @@
                     <div class="container over-done-bill">
                         <div></div>
                         <div class='done-bill'>
-                            <div class="total">
+                            <div class="total-bill">
                                 <p>Tổng tiền hàng</p>
                                 <?php echo '<span >' . number_format($total,0,',','.'). ' đ</span>';?>
                             </div>
@@ -85,12 +111,9 @@
                             </div>
                         </div>
                     </div>          
-                <div class="container pay-btn">
-                    <button type="button" >Đặt hàng</button>
-                </div>
-                </div>
-            
-        
+                    <div class="container pay-btn mb-4">
+                        <a href='bill.php?action=confirm'>Đặt hàng</a>
+                    </div>
         <?php
             include_once './footer.php'
         ?>

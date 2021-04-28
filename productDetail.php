@@ -1,7 +1,7 @@
         <?php
             include_once './header.php';
         ?>
-        <div class="container product-detail">
+        <div class="container product-detail mb-4">
             <div class="row mt-2">
             <?php 
                 include './mysql.php';
@@ -96,7 +96,6 @@
                 mysqli_close($conn);
             ?>  
             </div>
-        </div>
         
    
         <?php

@@ -1,10 +1,10 @@
 <?php
 if(isset($_POST['txtUsername'])){
     include 'mysql.php';
-    $sql = "select * from KhachHang where UserName='". $_POST['txtUsername']."'";
+    $sql = "select a.MSKH,a.HoTenKH,a.SoDienThoai,a.UserName,a.PassWord ,b.DiaChi from KhachHang a, DiaChiKH b where a.MSKH=b.MSKH and a.UserName='". $_POST['txtUsername']."'";
     $result = mysqli_query($conn,$sql);
     $row =mysqli_fetch_array($result);
-    //echo $row['PassWord'];
+    echo md5($_POST['txtPassword']);
     if(isset($row)){
           if(md5($_POST['txtPassword']) == $row['PassWord'] ){
             session_start();

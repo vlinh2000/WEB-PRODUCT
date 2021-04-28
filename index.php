@@ -5,7 +5,7 @@
         <!--CAROUSEL-->
         <div class="container main mt-3">
             <div class="row">
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 pl-0">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-xl-8 pl-0 mb-2 pr-1">
                     <div id="banner-carosel" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#banner-carosel" data-slide-to="0" class="active"></li>
@@ -37,7 +37,7 @@
                 </div>
 
 
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 p-0">
+                <div class="d-{xl}-none col-xl-4 p-0">
                     <div class="banner">
                         <img src="https://cdn.tgdd.vn/2021/03/banner/a02-398-110-398x110-5.png" alt="banner1">
                         <img src="https://cdn.tgdd.vn/2021/03/banner/iphone-chung-398-110-398x110-2.png" alt="banner2">
@@ -46,7 +46,7 @@
                 </div>
                 
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2 mb-4 p-0">
-                    <img src="https://cdn.tgdd.vn/2021/04/banner/1200-75-1200x75-3.png" alt="banner4" width='1140px' >
+                    <img src="https://cdn.tgdd.vn/2021/04/banner/1200-75-1200x75-3.png" alt="banner4" width='99.9%' >
                 </div>
                 
             </div>
@@ -200,7 +200,7 @@
         </div>
 
         <!-- PRODUCTS-->
-        <div class="container mt-5 products ">
+        <div class="container mt-5 products mb-5">
                      <h4 class='category'>
                         ĐIỆN THOẠI
                     </h4>
@@ -218,7 +218,7 @@
                                                             <h5 class="name-product">'. $row['TenHH'].'</h5>
                                                             <div class="price">
                                                                 <span class="new-price">'. number_format($row['Gia'],0,',','.').' ₫ </span>
-                                                                <strike class="old-price">'.number_format($row['Gia'],0,',','.').' ₫</strike> 
+                                                                <strike class="old-price">'.number_format($row['Gia']+2000000,0,',','.').' ₫</strike> 
                                                             </div>
                                                             <div class="raiting-status">
                                                                 <span class="raiting"></span>
@@ -251,7 +251,6 @@
                       </ul>
                     </nav>                                            
                     </div>
-        </div>
         <?php
             include_once './footer.php'
         ?>
