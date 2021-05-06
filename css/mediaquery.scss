@@ -1,4 +1,4 @@
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
     .navbar {
         /* flex-direction: column;
         justify-content: center;
@@ -44,5 +44,14 @@
     }
     .banner {
         display: none;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .list-info {
+        display: block;
+    }
+    .item-footer {
+        width: 100%;
     }
 }

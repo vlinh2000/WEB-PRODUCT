@@ -17,7 +17,11 @@ if(isset($_POST['SoDonDH'])){
         <h5 class="title-ordered">Hóa đơn đã mua</h5>
         <?php
         include './mysql.php';
-        $sql = 'select * from dathang';
+        if(!isset($_SESSION['ID'])) {
+            header("location:login.php");
+            return;
+        }
+        $sql = 'select * from dathang where MSKH="'.$_SESSION['ID'].'" ORDER BY NgayDH DESC';
         $result = mysqli_query($conn,$sql);
         $check =false;
             while($row=$result->fetch_assoc()){
@@ -27,7 +31,7 @@ if(isset($_POST['SoDonDH'])){
                          if($row['TrangThai']=='Đang vận chuyển') echo 'class="shipping">'.$row['TrangThai'].'</span></p>';
                          else echo 'class="ship-done">'.$row['TrangThai'].'</span></p>';
                          echo ' <table class="table"> ';
-                         $sql1 = "select b.HinhAnh, b.TenHH, a.SoLuong, a.GiaDatHang from chitietdathang a , hanghoa b where a.MSHH= b.MSHH and SoDonDH='".$row['SoDonDH']."'";
+                         $sql1 = "select b.HinhAnh, b.TenHH, a.SoLuong, a.GiaDatHang from chitietdathang a , hanghoa b where a.MSHH= b.MSHH and a.SoDonDH='".$row['SoDonDH']."'";
                          $result1 = mysqli_query($conn,$sql1);
                          while($row1=$result1->fetch_assoc()){
                           echo     ' <tr>

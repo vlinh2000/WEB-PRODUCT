@@ -321,7 +321,7 @@ ul {
 /*LOGIN , REGISTER */
 .form form {
     width: 30%;
-    /* margin: 50px auto; */
+    /* margin: 210px auto; */
     padding: 20px 50px;
     background-color: #eee;
     border-radius: 5px;
@@ -440,6 +440,7 @@ a.phone .price {
 .raiting-status {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .raiting {
     background-image: url("../img/raiting5sao.png");

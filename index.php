@@ -55,7 +55,7 @@
         <!--Khuuyen mai-->
         <div class="container products ">
                     <h4  class="category">
-                        SẢN PHẨM KHUYẾN MÃI HOT NHẤT
+                        TOP SẢN PHẨM HOT NHẤT
                     </h4>
                     <hr>
                     <div id="hot-products" class="carousel slide" data-ride="carousel">
@@ -65,128 +65,40 @@
                             <li data-target="#hot-products" data-slide-to="2"></li>
                         </ol>
                         <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active">
-                            <div class="row">
-                                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-4 pd-0">
+                        <?php 
+                         include './mysql.php';
+                         $sql = 'select a.MSHH , sum(a.SoLuong) as SoLuong ,b.HinhAnh,b.TenHH,b.Gia  from chitietdathang a, HangHoa b where a.MSHH=b.MSHH group by a.MSHH';
+                         $result = mysqli_query($conn,$sql);
+                         $rowcount=mysqli_num_rows($result);
+                         for($i=0;$i<$rowcount;$i+=4){
+                             $countProduct = 0;
+                            if($i<1) echo '<div class="carousel-item active">';
+                            else echo '<div class="carousel-item ">';
+                             echo ' <div class="row">';
+                             while($row=$result->fetch_assoc()){
+                                    echo ' <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-4 pd-0">
                                             <a class="phone">
-                                            <img class="card-img-top" src="https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-xanh-duong-new-600x600-600x600.jpg" alt="">
-                                            <h5 class="name-product">Điện thoại iPhone 12 64GB </h5>
-                                            <div class='price'>
-                                                <span class="new-price">21.999.999 ₫ </span>
-                                                <strike class='old-price'>25.000.000 ₫</strike> 
+                                            <img class="card-img-top" src="'.$row['HinhAnh'].'" alt="">
+                                            <h5 class="name-product">'.$row['TenHH'].'</h5>
+                                            <div class="price">
+                                                <span class="new-price">'.number_format($row['Gia'],0,',','.').' ₫ </span>
+                                                <strike class="old-price">'.number_format($row['Gia']+2000000,0,',','.').' ₫</strike> 
                                             </div>
-                                            <div class='raiting-status'>
-                                                <span class='raiting'></span>
-                                                <span class='num-raiting'>6 đánh giá</span>
+                                            <div class="raiting-status">
+                                                <span class="raiting"></span>
+                                                <span class="num-raiting">đã bán: '.$row['SoLuong'].'</span>
                                             </div>
                                         </a>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-4 pd-0">
-                                            <a class="phone">
-                                            <img class="card-img-top" src="https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-xanh-duong-new-600x600-600x600.jpg" alt="">
-                                            <h5 class="name-product">Điện thoại iPhone 12 64GB </h5>
-                                            <div class='price'>
-                                                <span class="new-price">21.999.999 ₫ </span>
-                                                <strike class='old-price'>25.000.000 ₫</strike> 
-                                            </div>
-                                            <div class='raiting-status'>
-                                                <span class='raiting'></span>
-                                                <span class='num-raiting'>6 đánh giá</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-4 pd-0">
-                                            <a class="phone">
-                                            <img class="card-img-top" src="https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-xanh-duong-new-600x600-600x600.jpg" alt="">
-                                            <h5 class="name-product">Điện thoại iPhone 12 64GB </h5>
-                                            <div class='price'>
-                                                <span class="new-price">21.999.999 ₫ </span>
-                                                <strike class='old-price'>25.000.000 ₫</strike> 
-                                            </div>
-                                            <div class='raiting-status'>
-                                                <span class='raiting'></span>
-                                                <span class='num-raiting'>6 đánh giá</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-4 pd-0">
-                                            <a class="phone">
-                                            <img class="card-img-top" src="https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-xanh-duong-new-600x600-600x600.jpg" alt="">
-                                            <h5 class="name-product">Điện thoại iPhone 12 64GB </h5>
-                                            <div class='price'>
-                                                <span class="new-price">21.999.999 ₫ </span>
-                                                <strike class='old-price'>25.000.000 ₫</strike> 
-                                            </div>
-                                            <div class='raiting-status'>
-                                                <span class='raiting'></span>
-                                                <span class='num-raiting'>6 đánh giá</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                                        
-                            </div>
-                            </div>
-                            <div class="carousel-item">
-                            <div class="row">
-                                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-4 pd-0">
-                                            <a class="phone">
-                                            <img class="card-img-top" src="https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-xanh-duong-new-600x600-600x600.jpg" alt="">
-                                            <h5 class="name-product">Điện thoại iPhone 12 64GB </h5>
-                                            <div class='price'>
-                                                <span class="new-price">21.999.999 ₫ </span>
-                                                <strike class='old-price'>25.000.000 ₫</strike> 
-                                            </div>
-                                            <div class='raiting-status'>
-                                                <span class='raiting'></span>
-                                                <span class='num-raiting'>6 đánh giá</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-4 pd-0">
-                                            <a class="phone">
-                                            <img class="card-img-top" src="https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-xanh-duong-new-600x600-600x600.jpg" alt="">
-                                            <h5 class="name-product">Điện thoại iPhone 12 64GB </h5>
-                                            <div class='price'>
-                                                <span class="new-price">21.999.999 ₫ </span>
-                                                <strike class='old-price'>25.000.000 ₫</strike> 
-                                            </div>
-                                            <div class='raiting-status'>
-                                                <span class='raiting'></span>
-                                                <span class='num-raiting'>6 đánh giá</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-4 pd-0">
-                                            <a class="phone">
-                                            <img class="card-img-top" src="https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-xanh-duong-new-600x600-600x600.jpg" alt="">
-                                            <h5 class="name-product">Điện thoại iPhone 12 64GB </h5>
-                                            <div class='price'>
-                                                <span class="new-price">21.999.999 ₫ </span>
-                                                <strike class='old-price'>25.000.000 ₫</strike> 
-                                            </div>
-                                            <div class='raiting-status'>
-                                                <span class='raiting'></span>
-                                                <span class='num-raiting'>6 đánh giá</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-4 pd-0">
-                                            <a class="phone">
-                                            <img class="card-img-top" src="https://cdn.tgdd.vn/Products/Images/42/213031/iphone-12-xanh-duong-new-600x600-600x600.jpg" alt="">
-                                            <h5 class="name-product">Điện thoại iPhone 12 64GB </h5>
-                                            <div class='price'>
-                                                <span class="new-price">21.999.999 ₫ </span>
-                                                <strike class='old-price'>25.000.000 ₫</strike> 
-                                            </div>
-                                            <div class='raiting-status'>
-                                                <span class='raiting'></span>
-                                                <span class='num-raiting'>6 đánh giá</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                                        
-                            </div>
-                            </div>
+                                    </div>';
+                                    $countProduct++;
+                                    if($countProduct==4) break;
+                             }
+                             echo ' </div>
+                                    </div>';
+                                  
+                         }
+                         mysqli_close($conn);
+                         ?>                                                                                        
                         </div>
                         <a class="carousel-control-prev" href="#hot-products" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

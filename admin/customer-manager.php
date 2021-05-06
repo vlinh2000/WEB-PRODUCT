@@ -65,7 +65,7 @@
                                     <tbody>
                                     <?php 
                                         include '../mysql.php';
-                                        $sql = 'select * from KhachHang';
+                                        $sql = 'select * from KhachHang a , diachikh b where a.MSKH = b.MSKH';
                                         $result = mysqli_query($conn,$sql);
                                         $STT=1;
                                         while($row=$result->fetch_assoc()){

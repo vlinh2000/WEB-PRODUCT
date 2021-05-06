@@ -29,7 +29,7 @@
             <tbody>
                 <?php 
                 include '../mysql.php';
-                $sql = 'select * from dathang';
+                $sql = 'select * from dathang order by ngaydh desc';
                 $result = mysqli_query($conn,$sql);
                 $STT=1;
                 while($row=$result->fetch_assoc()){

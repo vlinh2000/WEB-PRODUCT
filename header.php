@@ -1,5 +1,11 @@
 <?php 
 session_start();
+if(isset($_GET['action']) && $_GET['action'] == 'logout'){
+    // unset($_SESSION['ID']);
+    // unset($_SESSION['FullName']);
+    session_destroy();
+    header("location:index.php");
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +20,7 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./lib/fontawesome-free-5.15.3-web/css/all.min.css">
-    <link rel="stylesheet" href="./css/mediaquery.css">
+    <link rel="stylesheet" href="./css/mediaquery.scss">
 </head>
 
 <body <?php if(!isset($_SESSION['Cart'])) echo 'onload="loadCart();"'; ?>>
@@ -73,7 +79,7 @@ session_start();
                                         <div class='account'>
                                             <div><a href='personal-info.php'>Tài khoản của tôi</a></div>
                                             <div><a href='bill-done.php'>Đơn mua</a></div> 
-                                            <div><a href='logout.php'>Đăng xuất</a></div> 
+                                            <div><a href='header.php?action=logout'>Đăng xuất</a></div> 
                                         </div>
                                 </div>";
                         }else {

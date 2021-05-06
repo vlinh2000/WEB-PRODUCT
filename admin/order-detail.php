@@ -54,8 +54,8 @@
                                           echo '<td>'.$row['SoDonDH'].'</td>';
                                           echo '<td>'.$row['MSHH'].'</td>';
                                           echo '<td>'.$row['TenHH'].'</td>';
-                                          echo '<td>'.$row['GiaDatHang'].'</td>';
                                           echo '<td>'.$row['SoLuong'].'</td>';
+                                          echo '<td>'.$row['GiaDatHang'].'</td>';
                                           echo '<td>'.$row['GiamGia'].'</td>';
                                           echo '</tr>';  
                                           $STT++;
