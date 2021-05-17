@@ -721,7 +721,7 @@ a.phone .price {
     background-color: #fff !important;
 }
 .cart-detail-bill .table th {
-    color: #ccc;
+    color: #999;
 }
 .view-cart {
     display: flex;
@@ -738,10 +738,11 @@ a.phone .price {
 .fa-plus-square,
 .fa-minus-square {
     cursor: pointer;
-    color: #125e5e;
+    color: #8950fc;
+    font-size: 18px;
 }
 .action-Icon-Delete {
-    color: #f0245b;
+    color: #dc3545;
     cursor: pointer;
     font-size: 140%;
     margin-left: 30%;
@@ -807,7 +808,8 @@ a.phone .price {
 }
 .pay-method span {
     font-size: 14px;
-    color: #ffc107;
+    color: #8950fc;
+    font-weight: bold;
 }
 .transport {
 }
@@ -854,7 +856,7 @@ a.phone .price {
 .fee p,
 .all-total p {
     margin-bottom: 0;
-    color: #aaa;
+    color: #999;
     flex-grow: 1;
 }
 .all-total span {
@@ -931,20 +933,31 @@ a.phone .price {
     margin-bottom: 30px;
     font-size: 18px;
 }
+
+.wait-confirm {
+    background-color: #3f51b5;
+    padding: 2.5px 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    color: #fff;
+}
+.canceled {
+    background-color: #d9534f;
+    padding: 2.5px 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    color: #fff;
+}
 .shipping {
-    background-color: #337ab7;
+    background-color: #ffc107;
     padding: 2.5px 5px;
     border-radius: 5px;
     font-size: 10px;
     color: #fff;
     cursor: pointer;
 }
-.ordered .top .shipping:hover {
-    color: #f0f035;
-}
-
 .ship-done {
-    background-color: #f0ad4e;
+    background-color: #28a745;
     padding: 2.5px 5px;
     border-radius: 5px;
     font-size: 10px;

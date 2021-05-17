@@ -74,6 +74,8 @@ function Delete(MSHH) {
 }
 
 function statusGoods(SoDonDH) {
+    window.scrollTo(0, 0); // scroll on top 
+    $('body').css('overflow', 'hidden')
     $(".confirm").show();
     $("#wrapper").addClass("background");
     $('#receivedBtn').click(function () {
@@ -90,14 +92,5 @@ function statusGoods(SoDonDH) {
 function exit() {
     $("#wrapper").removeClass();
     $(".confirm").hide();
-}
-
-function logout() {
-    alert(" <?php
-    session_start();
-    unset($_SESSION['ID']);
-    unset($_SESSION['FullName']);
-    session_destroy();
-    header("location:index.php");
-?> ")
+    $('body').css('overflow', 'scroll')
 }

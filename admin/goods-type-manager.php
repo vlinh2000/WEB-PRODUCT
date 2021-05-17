@@ -1,24 +1,38 @@
 <?php 
-if(isset($_POST['TenLoaiHang'])){
-    include '../mysql.php';
-    $MaLoaiHang = 'LH' . rand(0,9999999);
-    $sql = 'insert into LoaiHangHoa values ("'.$MaLoaiHang.'","'.$_POST['TenLoaiHang'].'")';
-    
-    if(mysqli_query($conn,$sql)){
-     $status = 'Thêm loại hàng ' .$_POST['TenLoaiHang'] .' thành công!';
-    }else{
-     $status = 'Thêm loại hàng ' .$_POST['TenLoaiHang'] .' thất bại!';
-    } 
-    // echo  '<script> windown.history.back()<script>';
-    //
+//DELETE
+$status="";
+ if(isset($_POST['action']) && $_POST['action'] == 'delete'){    
+            include '../mysql.php';
+            $sql = 'delete from  loaihanghoa  where MaLoaiHang="'.$_POST['id'].'"';
+           if( mysqli_query($conn,$sql)) $status='<span class="text-success">Xóa loại hàng thành công !</span>';
+           else $status='<span class="text-danger">Xóa loại hàng thất bại !</span>';
+            mysqli_close($conn);    
+     }
+     //UPDATE 
+     if(isset($_POST['id']) && isset($_POST['TenLoaiHang'])) {
+        include '../mysql.php';
+        $sql = 'update LoaiHangHoa set TenLoaiHang="'.$_POST['TenLoaiHang'].'" where MaLoaiHang="'.$_POST['id'].'"';
+        if(!mysqli_query($conn,$sql)){
+            echo "Error: " . $sql . "" . mysqli_error($conn);
+    }
     mysqli_close($conn);
     header("location:index.php?page=goods-type-manager.php");
+    }
+    // ADD 
+    else if(isset($_POST['TenLoaiHang'])){
+        include '../mysql.php';
+        $MaLoaiHang = 'LH' . rand(0,9999999);
+        $sql = 'insert into LoaiHangHoa values ("'.$MaLoaiHang.'","'.$_POST['TenLoaiHang'].'")';
+        
+        if(mysqli_query($conn,$sql)){
+         $status = 'Thêm loại hàng ' .$_POST['TenLoaiHang'] .' thành công!';
+        }else{
+         $status = 'Thêm loại hàng ' .$_POST['TenLoaiHang'] .' thất bại!';
+        } 
+        mysqli_close($conn);
+        header("location:index.php?page=goods-type-manager.php");
 }
-
 ?>
-
-
- <h1 class="title">Quản lí loại hàng hóa</h1>
     <div class="container formAdd ">
         <div class="panel panel-info">
         <div class="panel-heading add-goods-header">
@@ -44,23 +58,19 @@ if(isset($_POST['TenLoaiHang'])){
     </div>
     
     </div>
-<div class="container-fluid">
+<div class="container-fluid pt-5">
+   <div class="container-fluid"> <?php echo $status?>
     <div class="add">
         <button onclick="add()" class="btn btn-success add-Icon">
             <i class="fas fa-plus-square"></i>
             <span> Thêm loại HH</span>
         </button>
-    </div>
-    <div class="panel panel-primary">
-        <div class="panel-heading">LOẠI HÀNG HÓA</div>
-        <div class="panel-body">
-            <p>Cập nhật từ ngày 18-3-2021</p>
-            <?php if(isset($status)) echo 1 ;  ?>
-        </div>
-        <table class="table">
+    </div></div>
+    <div class="container-fluid table-data shadow">
+    <table class="table">
             <thead>
                 <tr>
-                    <th>STT</th>
+                    <th>#</th>
                     <th>Mã loại hàng</th>
                     <th>Tên loại hàng</th>
                     <th>Action</th>
@@ -78,7 +88,7 @@ if(isset($_POST['TenLoaiHang'])){
                     echo '<td>'.$row['MaLoaiHang'].'</td>';
                     echo '<td>'.$row['TenLoaiHang'].'</td>';
                     echo '<td>
-                             <i class="fas fa-pencil-alt mr-3 action-Icon-Update"  onclick="Update(this.parentElement.parentElement.children[1].innerText)" ></i>                           
+                             <i class="fas fa-pencil-alt mr-3 action-Icon-Update"  onclick="updateNotPost(this.parentElement.parentElement.children)" ></i>                           
                              <i class="fas fa-trash-alt action-Icon-Delete" onclick="Delete(this.parentElement.parentElement.children[1].innerText)"></i>                            
                           </td>';
                     echo '</tr>';
@@ -89,6 +99,6 @@ if(isset($_POST['TenLoaiHang'])){
             </tbody>
         </table>
     </div>
-
+        
 
 </div>

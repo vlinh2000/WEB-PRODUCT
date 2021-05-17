@@ -6,12 +6,12 @@
                 $SoDonDH = 'HD' . rand(0,9999999);
                 $date = getdate();
                 $NgayDH = $date['year'] . "/" . $date['mon'] . "/" . $date['mday'] ;
-                $NgayGH = $date['year'] . "/" . $date['mon'] . "/" . ($date['mday'] + 2) ;
+                // $NgayGH = $date['year'] . "/" . $date['mon'] . "/" . ($date['mday'] + 2) ;
                 $total=30000;
                         foreach ($_SESSION['Cart'] as $product) {
                                 $total+=(int)$product['Gia'] * (int)$product['SoLuong'];
                         }
-                $sql = "insert into dathang (SoDonDH,MSKH,MSNV,NgayDH,NgayGH,TongTien) values('".$SoDonDH."','".$_SESSION['ID']."','NV01','".$NgayDH."','".$NgayGH."','".$total."')";
+                $sql = "insert into dathang (SoDonDH,MSKH,MSNV,NgayDH,TongTien) values('".$SoDonDH."','".$_SESSION['ID']."','NV01','".$NgayDH."','".$total."')";
                 $status=false;
                 if(mysqli_query($conn,$sql)){
                     $status = true;
@@ -83,7 +83,7 @@
                         
                          </td>
                          <td class='transport-price'> 
-                               <span >49.000 đ</span>
+                               <span >30.000 ₫</span>
                         </td>
                      </tr>              
                 </table>

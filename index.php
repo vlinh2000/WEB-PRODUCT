@@ -121,7 +121,7 @@
 
                    <?php 
                                         include './mysql.php';
-                                        $sql = 'select MSHH,TenHH,Gia,HinhAnh from HangHoa';
+                                        $sql = 'select MSHH,TenHH,Gia,HinhAnh from HangHoa ';
                                         $result = mysqli_query($conn,$sql);
                                         while($row=$result->fetch_assoc()){
                                             echo '<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-4 pd-0">

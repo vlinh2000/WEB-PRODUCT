@@ -8,8 +8,9 @@
     <title>Shopping every day.</title>
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="../lib/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/media.css">
 </head>
@@ -33,7 +34,7 @@
                             <div class="form-group">
                                 <input type="email" class="form-control" placeholder="Search ">
                             </div>
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-warning">
                                 <i class="fas fa-search"></i>
                             </button>
                         </form>
@@ -46,7 +47,7 @@
         </div>
         <div class="container-fluid section">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 padding-0">
+                <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2  p-left-0">
                     <div class="sidebar" id='sidebar'>
                         <ul class="core">
                             <p>CORE</p>
@@ -108,61 +109,14 @@
 
     <!-- Latest compiled and minified JavaScript -->
 
-    <script src="../lib/bootstrap-3.3.7-dist/js/jquery-360.min.js"> </script>
+    <!-- <script src="../lib/bootstrap-3.3.7-dist/js/jquery-360.min.js"> </script>
+   
+    <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script src="../lib/fontawesome-free-5.15.3-web/js/all.min.js"></script>
-    <script src="../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <script>
-        //   $("li").click(function(e){
-        //      $("li>a>span").addClass('active');
-           
-        //   });
-        
-
-        function exit() {
-            $("#wrapper").removeClass();
-            $(".formAdd").hide();
-        }
-        function add() {
-            //show and hide form 
-            $(".formAdd").show();
-            $("#wrapper").addClass("background");
-        }
-
-        function Update(idProduct) {
-            // code php to get data by id
-            console.log(idProduct);
-        }
-        function Delete(idProduct) {
-            console.log(idProduct);
-            if (confirm(`Bạn có chắc muốn xóa sản phẩm với ID là ${idProduct} ?`)) {
-                // code php to delete data by id
-                console.log('ok');
-            } else return;
-
-        }
-        let onOff = false;
-        function onOffSidebar(){
-            onOff = !onOff;
-           if(onOff) {
-            $('.sidebar').hide();
-            $('#main-board').removeClass('col-xs-12 col-sm-10 col-md-10 col-lg-10');
-            $('#main-board').addClass('col-xs-12 col-sm-12 col-md-12 col-lg-12');
-           }else{
-            $('.sidebar').show();
-            $('#main-board').removeClass('col-xs-12 col-sm-12 col-md-12 col-lg-12');
-            $('#main-board').addClass('col-xs-12 col-sm-10 col-md-10 col-lg-10');
-           }
-        }
-
-        // function save(location='goods-type-manager.php'){
-        //     $(".formAdd").submit(function(e){
-        //         e.preventDefault();
-        //     });
-        //     $(".formAdd").submit();
-        //     alert("Lưu thành công");
-        //     window.location = `?page=${location} `;
-        // }
-    </script>
+    <script src="../lib/bootstrap-3.3.7-dist/js/jquery-360.min.js"></script>
+    <script type="text/javascript" src="./js/scripts.js"></script>
 
 </body>
 

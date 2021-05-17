@@ -23,17 +23,16 @@
         </a>
     </div>
 
-
     <div class="container-fluid goods">
         <div class="panel panel-primary">
             <div class="panel-heading">CHI TIẾT HÓA ĐƠN <?php echo '<span class="label label-warning">'.$_GET['SoDonDH'].'</span>' ?> </div>
             <div class="panel-body">
-                <p>Cập nhật từ ngày 18-3-2021</p>
+                <!-- <p>Cập nhật từ ngày 18-3-2021</p> -->
             </div>
             <table class="table">
                 <thead>
                     <tr>
-                        <th>STT</th>
+                        <th>#</th>
                         <th>SoDonDH</th>
                         <th>MSHH</th>
                         <th>TenHH</th>

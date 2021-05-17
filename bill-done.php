@@ -4,7 +4,8 @@ include './header.php';
 <?php
 if(isset($_POST['SoDonDH'])){
     include 'mysql.php';
-    $sql = "update dathang set TrangThai='".$_POST['TrangThai']."' where SoDonDH='".$_POST['SoDonDH']."'"; 
+    if(isset($_POST['NgayGH'])) $sql = "update dathang set TrangThai='".$_POST['TrangThai']."',NgayGH='".$_POST['NgayGH']."' where SoDonDH='".$_POST['SoDonDH']."'"; 
+    else $sql = "update dathang set TrangThai='".$_POST['TrangThai']."' where SoDonDH='".$_POST['SoDonDH']."'"; 
     if (mysqli_query($conn, $sql)) {
      } else {
         echo "Error: " . $sql . "" . mysqli_error($conn);
@@ -14,7 +15,7 @@ if(isset($_POST['SoDonDH'])){
 
 ?>
     <div class="container all-ordered">
-        <h5 class="title-ordered">Hóa đơn đã mua</h5>
+        <h5 class="title-ordered">Hóa đơn của tôi</h5>
         <?php
         include './mysql.php';
         if(!isset($_SESSION['ID'])) {
@@ -27,9 +28,11 @@ if(isset($_POST['SoDonDH'])){
             while($row=$result->fetch_assoc()){
                 $check=true;
                 echo ' <div class="ordered">
-                         <p class="top"><span class="code-bill">'.$row['SoDonDH'].'</span> <span onclick="statusGoods(this.parentElement.children[0].innerHTML);" ';
-                         if($row['TrangThai']=='Đang vận chuyển') echo 'class="shipping">'.$row['TrangThai'].'</span></p>';
-                         else echo 'class="ship-done">'.$row['TrangThai'].'</span></p>';
+                         <p class="top"><span class="code-bill">'.$row['SoDonDH'].'</span>';
+                         if($row['TrangThai']=='Đang vận chuyển') echo '<span onclick="statusGoods(this.parentElement.children[0].innerHTML);" class="shipping">'.$row['TrangThai'].'</span></p>';
+                         else if($row['TrangThai']=='Chờ xác nhận') echo '<span class="wait-confirm">'.$row['TrangThai'].'</span></p>';
+                         else if($row['TrangThai']=='Đã hủy') echo '<span class="canceled">'.$row['TrangThai'].'</span></p>';
+                         else echo '<span class="ship-done">'.$row['TrangThai'].'</span></p>';
                          echo ' <table class="table"> ';
                          $sql1 = "select b.HinhAnh, b.TenHH, a.SoLuong, a.GiaDatHang from chitietdathang a , hanghoa b where a.MSHH= b.MSHH and a.SoDonDH='".$row['SoDonDH']."'";
                          $result1 = mysqli_query($conn,$sql1);
@@ -50,7 +53,7 @@ if(isset($_POST['SoDonDH'])){
                              <hr>
                              <div class="date-total">
                              <p><span>Ngày mua hàng: </span><span>'.$row['NgayDH'].'</span></p>
-                             <p><span>Ngày giao hàng: </span><span>'.$row['NgayGH'].'</span></p>
+                             <p><span>Ngày giao hàng dự kiến: </span><span>'.$row['NgayGH'].'</span></p>
                              <p><span>Phí vận chuyển: </span><span>₫ 30.000</span></p>
                              <p><span>Tổng tiền:</span><span class="total">₫ '.number_format($row['TongTien'],0,',','.').'</span></p>
                              </div>
