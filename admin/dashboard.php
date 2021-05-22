@@ -130,7 +130,7 @@
                         </table>
                        </div>
                                 
-                                <div class="container bill-confirm shadow mb-5">
+                                <div class="container bill-confirm  shadow mb-5">
                                     <h5>Hóa đơn bị hủy</h5>
                                 <table class="table">
                                         <thead class="thead-inverse">
@@ -164,6 +164,11 @@
                                             </tbody>
                                     </table>                     
                             </div>
-                       
+                            <!-- Test -->
+                            <div class="container statistical mb-5">
+                                <h5>Thống kê</h5>
+                            <canvas id="myChart" width='500px' height='200px'></canvas>
+                            </div>
+                            <?php echo "<script> statisticalBill();</script>" ?>
                       
                         

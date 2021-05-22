@@ -24,7 +24,6 @@ function checkProductExistInCart(Cart, product, action) {
             });
             break;
     }
-
 }
 
 function addToCart(MSHH, action = 'ADD') {
@@ -93,4 +92,17 @@ function exit() {
     $("#wrapper").removeClass();
     $(".confirm").hide();
     $('body').css('overflow', 'scroll')
+}
+
+function cancled(SoDonDH) {
+    if (confirm(`Bạn có muốn hủy đơn hàng ${SoDonDH} ?`)) {
+        $.ajax({
+            type: 'POST',
+            url: 'bill-done.php',
+            data: { TrangThai: "Đã hủy", SoDonDH: SoDonDH },
+            success: function (result) {
+                window.location.reload();
+            }
+        });
+    }
 }

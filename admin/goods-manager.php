@@ -233,7 +233,7 @@ else if(isset($_POST['TenHH'])){
                                           echo '<td>'.$row['TenHH'].'</td>';                                                                             
                                           echo '<td id="selected">'.$row['MaLoaiHang'].'</td>';
                                           echo '<td>'.$row['QuyCach'].'</td>';
-                                          echo '<td>'. number_format($row['Gia'],0,',','.').'</td>';
+                                          echo '<td>'.$row['Gia'].'</td>';
                                           echo '<td>'.$row['SoLuongHang'].'</td>';
                                           echo '<td>'.$row['GhiChu'].'</td>';
                                          

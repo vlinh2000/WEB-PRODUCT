@@ -52,7 +52,7 @@
                 </div>
                 <div class="bill">
                     <span class="total">Tổng tiền (<?php echo isset($_SESSION['Cart']) ? count($_SESSION['Cart']) : 0 ;echo ' sản phẩm) : ' . number_format($total,0,',','.'). ' đ</span>';?>
-                    <a href='bill.php' class="btn btn-buy">Mua hàng</a>
+                    <a href='bill.php'>Mua hàng</a>
                 </div>
             </div>
        

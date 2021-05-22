@@ -37,7 +37,7 @@ if(isset($_POST['txtUsername'])){
 </head>
 
 <body>
-    <div class="container-fluid form">
+    <div class="container-fluid form shadow">
         <form action="login.php" method="POST" role="form">
             <legend>Đăng nhập</legend>
             <div class="form-group ">

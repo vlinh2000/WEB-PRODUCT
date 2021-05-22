@@ -20,7 +20,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout'){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./lib/fontawesome-free-5.15.3-web/css/all.min.css">
-    <link rel="stylesheet" href="./css/mediaquery.scss">
+    <link rel="stylesheet" href="./css/mediaquery.css">
 </head>
 
 <body <?php if(!isset($_SESSION['Cart'])) echo 'onload="loadCart();"'; ?>>
@@ -28,7 +28,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout'){
         <!-- HEADER-->
         <div id="header">
             <div class="new-navbar" id="myTopnav">
-               <div>
+               <div id="logo">
                     <a href="index.php">
                         <img class="logo"
                             src="./img/logo.png"
@@ -44,7 +44,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout'){
                         </form>
                     </div>
                     <div class="cart">
-                        <a href="cart.php"><i class="fas fa-cart-plus fa-lg"></i></a>
+                        <?php if(!isset($_SESSION['Cart']) || count($_SESSION['Cart']) == 0) echo '<a href="cart.php"><i style="font-size:19px; color: #ddd" class="fa fa-shopping-cart"></i></a>';
+                        else echo '<a href="cart.php"><i style="font-size:19px; color: #ddd" class="fa fa-shopping-cart"></i><span class="cart-num">'.count($_SESSION['Cart']).'</span></a>' ;?>
                         <span class='triangle'></span>
                         <div class="products-in-cart">
                         <?php
@@ -73,7 +74,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout'){
                         <?php
                         if(isset($_SESSION['ID'])){
                             echo "<div class='logged'>
-                                         <i class='fas fa-user-circle' style='font-size:130%; color: #EEE'  ></i>
+                                         <i class='fas fa-user' style='font-size:19px; color: #ddd'  ></i>
                                         <span class='name mr-2'>".$_SESSION['UserName']."</span>
                                         <span class='triangle'></span>
                                         <div class='account'>
@@ -86,6 +87,6 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout'){
                             echo '<a href="login.php" class="signin">Đăng nhập</a>';
                         }
                         ?>
-                    </div>
+                    </div>                                                
             </div>
         </div>

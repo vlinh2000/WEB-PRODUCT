@@ -57,8 +57,7 @@
                     <h4  class="category">
                         TOP SẢN PHẨM HOT NHẤT
                     </h4>
-                    <hr>
-                    <div id="hot-products" class="carousel slide" data-ride="carousel">
+                    <div id="hot-products" class="carousel slide mt-4" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#hot-products" data-slide-to="0" class="active"></li>
                             <li data-target="#hot-products" data-slide-to="1"></li>
@@ -77,7 +76,7 @@
                              echo ' <div class="row">';
                              while($row=$result->fetch_assoc()){
                                     echo ' <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-4 pd-0">
-                                            <a class="phone">
+                                            <a class="phone" href="productDetail.php?MSHH='.$row['MSHH'].'">
                                             <img class="card-img-top" src="'.$row['HinhAnh'].'" alt="">
                                             <h5 class="name-product">'.$row['TenHH'].'</h5>
                                             <div class="price">
@@ -116,8 +115,7 @@
                      <h4 class='category'>
                         ĐIỆN THOẠI
                     </h4>
-                    <hr>
-                   <div class="row">
+                   <div class="row mt-4">
 
                    <?php 
                                         include './mysql.php';

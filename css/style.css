@@ -49,8 +49,8 @@ ul {
 .form-search > button {
     padding: 8px 20px;
     border: none;
-    background-color: #57b72f;
-    color: #fff;
+    background-color: #ffc107;
+    color: #000;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -77,16 +77,35 @@ ul {
     background-color: #232a34;
     align-items: center;
 }
-
+#menu-icon {
+    color: #aaa;
+    margin-right: 20px;
+    cursor: pointer;
+    display: none;
+}
 .cart {
     font-size: 110%;
     position: relative;
 }
 .cart > a {
+    position: relative;
     text-decoration: none;
-    color: #fff;
+    color: #ddd;
+    padding: 4px 20px;
+    border: #dfbf61 1px solid;
+    display: block;
 }
-
+.cart-num {
+    color: #fcfcfc;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: #dc3545;
+    padding: 1px 4px;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    right: 12px;
+}
 .cart:hover .products-in-cart {
     display: block;
 }
@@ -94,20 +113,20 @@ ul {
     display: block;
 }
 .cart > .triangle {
-    right: 0px;
-    bottom: -11px;
+    right: 16px;
+    bottom: -10px;
 }
 .triangle {
     display: none;
     position: absolute;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 10px solid #eee;
+    border-bottom: 10px solid #fff;
 }
 
 .products-in-cart {
     position: absolute;
-    top: 140%;
+    top: 125%;
     right: -50%;
     display: none;
     width: 400px;
@@ -151,7 +170,7 @@ ul {
     color: #e9b7b7;
     text-decoration: none;
     display: block;
-    border: 1px solid #fff;
+    border: 1px solid #dfbf61;
     border-top-left-radius: 5px;
     border-bottom-right-radius: 5px;
     font-size: 14px;
@@ -164,10 +183,12 @@ ul {
     display: flex;
     position: relative;
     cursor: pointer;
+    align-items: center;
 }
 .name {
     margin-left: 5px;
     color: #e8e23a;
+    font-weight: bold;
 }
 
 .logged:hover .account {
@@ -320,7 +341,7 @@ ul {
 
 /*LOGIN , REGISTER */
 .form form {
-    width: 30%;
+    min-width: 30%;
     /* margin: 210px auto; */
     padding: 20px 50px;
     background-color: #eee;
@@ -335,12 +356,16 @@ ul {
     resize: none;
 }
 .form {
-    background-image: linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99);
+    /* background-image: linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99); */
+    background-image: url("../img/Login_bg.jpg");
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .form legend {
     text-align: center;
@@ -486,6 +511,9 @@ a.phone .price {
 .tskt {
     padding: 10px 15px 30px 15px;
 }
+.tskt table td {
+    font-size: 15px;
+}
 .km h3,
 .tskt h3 {
     font-size: 18px;
@@ -508,13 +536,12 @@ a.phone .price {
 }
 .buy-it {
     padding: 5px 0px;
-    background-color: tomato;
+    background-color: #ee4d2d;
     color: #ddd;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 5px;
 }
 .buy-it:hover {
     background-color: #fa3e42;
@@ -546,7 +573,7 @@ a.phone .price {
 }
 /*FOOTER*/
 .list-info {
-    display: flex !important;
+    display: flex;
     padding: 20px 0px 50px 0px;
 }
 
@@ -705,12 +732,28 @@ a.phone .price {
     background-color: #fff !important;
     padding: 0px 10px;
     font-size: 15px;
+    min-height: 30vh;
 }
 .cart-detail .table {
     background-color: #fff !important;
 }
 .cart-detail .table th {
     color: #ccc;
+}
+.bill a {
+    border: none;
+    padding: 7px 30px;
+    background-color: #ee4d2d;
+    color: #fff;
+    margin: 10px 0px;
+    text-decoration: none;
+}
+.btn-cancel {
+    border: none;
+    padding: 5px 15px;
+    background-color: #ee4d2d;
+    color: #fff;
+    cursor: pointer;
 }
 .cart-detail-bill {
     background-color: #fff !important;
@@ -747,6 +790,7 @@ a.phone .price {
     font-size: 140%;
     margin-left: 30%;
 }
+
 .Status1 {
     cursor: not-allowed;
 }
@@ -907,11 +951,7 @@ a.phone .price {
     border: none;
     margin-top: 30px;
 }
-.btn-buy {
-    padding: 5px 30px;
-    background-color: #e2492b;
-    color: #fff;
-}
+
 .btn-info:hover {
     background-color: rgb(80, 79, 151);
 }
@@ -983,6 +1023,7 @@ a.phone .price {
     justify-content: space-around;
     background-color: #ddd;
     padding: 5px 0px;
+    align-items: center;
 }
 .ordered td {
     font-size: 16px;

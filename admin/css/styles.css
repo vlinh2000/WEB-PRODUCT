@@ -137,7 +137,7 @@ h1 {
 }
 .main {
     /* background-color: #eee; */
-    height: 1024px;
+    min-height: 1024px;
     /* background-color: #eee; */
 }
 /* #main-board {
@@ -149,6 +149,11 @@ h1 {
 }
 
 /* below dashboard*/
+.price {
+    font-size: 18px;
+    color: #ee4d2d;
+    font-weight: bold;
+}
 .btn-success {
     background-color: #8950fc !important;
 }
@@ -171,7 +176,7 @@ h1 {
     cursor: pointer;
 }
 .not-bill-canceled {
-    font-size: 12px;
+    font-size: 12px !important;
     font-weight: bold;
     color: #28a745;
 }
@@ -220,6 +225,9 @@ h1 {
 }
 .bill-confirm > table th {
     color: #999;
+}
+.bill-confirm > table td {
+    font-size: 85%;
 }
 .view-up {
     padding-top: 30px;
@@ -306,6 +314,10 @@ h1 {
     color: #dc3545;
     cursor: pointer;
 }
+.action-Icon-Detail {
+    color: #0d6efd;
+    cursor: pointer;
+}
 .add-Icon {
     margin-bottom: 10px;
 }
@@ -332,13 +344,13 @@ h1 {
     background-color: #8950fc;
     color: #fcfcfc;
 }
-#product > input[name="MSHH"] {
-    width: 60%;
+#product > input[name="MSHH[]"] {
+    width: 62%;
 }
-#product > input[name="Gia"] {
-    width: 25%;
+#product > input[name="Gia[]"] {
+    width: 20%;
 }
-#product > input[name="SoLuong"] {
+#product > input[name="SoLuong[]"] {
     width: 10%;
 }
 .goods table td {
@@ -361,7 +373,11 @@ h1 {
 .ml-10 {
     margin-left: 10px;
 }
-.formAdd {
+.info-detail-bill {
+    font-size: 14px;
+}
+.formAdd,
+.view-detail-Bill {
     position: absolute;
     top: 4%;
     left: 2%;
@@ -370,6 +386,7 @@ h1 {
     padding: 20px 30px;
     display: none;
     z-index: 2;
+    min-width: 50%;
 }
 .w-50 {
     width: 50%;
@@ -393,7 +410,8 @@ h1 {
 .formAdd form {
     margin-top: 20px;
 }
-.panel-title {
+.panel-title,
+#bill-code {
     font-size: 17px;
     font-weight: bold;
     padding-bottom: 3px;
@@ -403,4 +421,18 @@ h1 {
     font-size: 150%;
     color: #ff002f;
     cursor: pointer;
+}
+.remove-product-icon {
+    color: #ff002f;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.statistical {
+    background-color: #fcfcfc;
+    padding: 20px 30px;
+}
+.statistical h5 {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
