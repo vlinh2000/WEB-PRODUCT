@@ -3,18 +3,15 @@ if(isset($_POST['action']) && $_POST['action']=='delete'){
        
             include '../mysql.php';
             $sql = 'delete from  HangHoa  where MSHH="'.$_POST['id'].'"';
-           if( mysqli_query($conn,$sql)) $status='<span class="text-success">Xóa sản phẩm thành công !</span>';
-           else $status='<span class="text-danger">Xóa sản phẩm thất bại !</span>';
+           if( !mysqli_query($conn,$sql)) echo "Error: " . $sql . "" . mysqli_error($conn);
+           $sql1 = 'delete from  chitietdathang  where MSHH="'.$_POST['id'].'"';
+           if( !mysqli_query($conn,$sql1)) echo "Error: " . $sql1 . "" . mysqli_error($conn);
             mysqli_close($conn);      
 }
 if(isset($_POST['id']) && isset($_POST['TenHH'])) {
     include '../mysql.php';
     $sql = 'update HangHoa set TenHH="'.$_POST['TenHH'].'", MaLoaiHang="'.$_POST['MaLoaiHang'].'", QuyCach="'.$_POST['QuyCach'].'", Gia="' .$_POST['Gia'].'",SoLuongHang="'.$_POST['SoLuongHang'].'",GhiChu="'.$_POST['Ghichu'].'", ManHinh="'.$_POST['ManHinh'].'",HeDieuHanh="'.$_POST['HeDieuHanh'].'",CamSau="'.$_POST['CamSau'].'",CamTruoc="'.$_POST['CamTruoc'].'",Chip="'.$_POST['Chip'].'",Ram="'.$_POST['Ram'].'",Rom="'.$_POST['Rom'].'",Sim="'.$_POST['Sim'].'",Pin="'.$_POST['Pin'].'",HinhAnh="'.$_POST['HinhAnh'].'" where MSHH="'.$_POST['id'].'"';
-    if(mysqli_query($conn,$sql)){
-$status = 'Sửa sản phẩm ' .$_POST['TenHH'] .' thành công!';
-}else{
-$status = 'Sửa sản phẩm ' .$_POST['TenHH'] .' thất bại!';
-}
+    if(!mysqli_query($conn,$sql)) echo "Error: " . $sql . "" . mysqli_error($conn);
 mysqli_close($conn);
 header("location:index.php?page=goods-manager.php"); 
 }
@@ -40,12 +37,7 @@ else if(isset($_POST['TenHH'])){
                                           .$_POST['Pin'].'","'
                                           .$_POST['HinhAnh']
                                           .'")';
-    echo $sql;
-    if(mysqli_query($conn,$sql)){
-     $status = 'Thêm hàng ' .$_POST['TenHH'] .' thành công!';
-    }else{
-     $status = 'Thêm hàng ' .$_POST['TenHH'] .' thất bại!';
-    }
+    if(!mysqli_query($conn,$sql)) echo "Error: " . $sql . "" . mysqli_error($conn);
     mysqli_close($conn);
     header("location:index.php?page=goods-manager.php"); 
 }

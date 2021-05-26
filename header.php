@@ -1,9 +1,11 @@
 <?php 
 session_start();
 if(isset($_GET['action']) && $_GET['action'] == 'logout'){
-    // unset($_SESSION['ID']);
-    // unset($_SESSION['FullName']);
-    session_destroy();
+    unset($_SESSION['ID']);
+    unset($_SESSION['FullName']);
+    unset($_SESSION['Phone']);
+    unset($_SESSION['DiaChi']);
+    unset($_SESSION['UserName']);
     header("location:index.php");
 } 
 ?>
@@ -21,9 +23,12 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout'){
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./lib/fontawesome-free-5.15.3-web/css/all.min.css">
     <link rel="stylesheet" href="./css/mediaquery.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="./lib/bootstrap-3.3.7-dist/js/jquery-360.min.js"></script>
+    <script type="text/javascript" src="./js/allFun.js"></script>
 </head>
-
-<body <?php if(!isset($_SESSION['Cart'])) echo 'onload="loadCart();"'; ?>>
+<?php if(!isset($_SESSION['Cart'])) echo '<script>loadCart();</script>'; ?>
+<body>
 <div id="wrapper">
         <!-- HEADER-->
         <div id="header">

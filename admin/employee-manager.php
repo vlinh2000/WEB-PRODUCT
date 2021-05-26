@@ -119,10 +119,11 @@ $status="";
                                             <td>'.$row['DiaChi'].'</td>
                                             <td>'.$row['SoDienThoai'].'</td>
                                             <td>'.$row['Luong'].'</td>
-                                            <td>
-                                                <i class="fas fa-pencil-alt mr-3 action-Icon-Update"  onclick="updateNotPost(this.parentElement.parentElement.children)" ></i>                           
-                                                <i class="fas fa-trash-alt action-Icon-Delete" onclick="Delete(this.parentElement.parentElement.children[1].innerText)"></i>
-                                            </td>
+                                         <td>';
+                                         if($_SESSION['IdAdmin'] == $row['MSNV']) echo '<i class="fas fa-pencil-alt mr-3 action-Icon-Update"  onclick="updateNotPost(this.parentElement.parentElement.children)" ></i>';      
+                                          else echo ' <i class="fas fa-pencil-alt mr-3 action-Icon-Update"  onclick="updateNotPost(this.parentElement.parentElement.children)" ></i>                           
+                                          <i class="fas fa-trash-alt action-Icon-Delete" onclick="Delete(this.parentElement.parentElement.children[1].innerText)"></i>'; 
+                                        echo '</td>
                                         </tr>';
                                         $STT++;
                                         }

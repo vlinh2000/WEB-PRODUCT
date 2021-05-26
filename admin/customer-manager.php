@@ -4,8 +4,11 @@ $status="";
  if(isset($_POST['action']) && $_POST['action'] == 'delete'){    
     include '../mysql.php';
     $sql = 'delete from  diachikh  where MSKH="'.$_POST['id'].'"';
-   if( mysqli_query($conn,$sql)) $status='<span class="text-success">Xóa khách hàng thành công !</span>';
-   else $status='<span class="text-danger">Xóa khách hàng thất bại !</span>';
+   if(!mysqli_query($conn,$sql)) {echo "Error: " . $sql . "" . mysqli_error($conn);};
+   $sql1 = 'delete from  khachhang  where MSKH="'.$_POST['id'].'"';
+   if(!mysqli_query($conn,$sql1)) {echo "Error: " . $sql1 . "" . mysqli_error($conn);};
+   $sql2 = 'delete from  dathang  where MSKH="'.$_POST['id'].'"';
+   if(!mysqli_query($conn,$sql2)) {echo "Error: " . $sql2 . "" . mysqli_error($conn);};
     mysqli_close($conn);
      }
      //UPDATE 
@@ -39,20 +42,17 @@ $status="";
             . md5($_POST['PassWord']) . "','"
             . $_POST['TenCongTy'] .  "')"; 
             $status=false;
-        if (mysqli_query($conn, $sql)) {
-            $status=true;
-         } else {
+        if (!mysqli_query($conn, $sql)) {
             echo "Error: " . $sql . "" . mysqli_error($conn);
-         }
+         } 
          $MADC = 'DC' . rand(0,99999999);
-         $sql1 = "insert into DiaChiKH values('". $MADC . "','". $_POST['DiaChi'] . "','" . $MSKH . "')"; 
-         if (mysqli_query($conn, $sql1)) {
-            $status*=true;
-         } else {
+         $sql1 = "insert into DiaChiKH values('". $MADC . "','". $_POST['DiaChi'] . "','" . $MSKH . "')";
+         if (!mysqli_query($conn, $sql1)) {
             echo "Error: " . $sql1 . "" . mysqli_error($conn);
-}
+         } 
 mysqli_close($conn);
-header("location:index.php?page=customer-manager.php"); }
+header("location:index.php?page=customer-manager.php"); 
+}
 ?>                  
                        <!--QUẢN LÍ KHÁCH HÀNG-->
                         <div class="container formAdd" >

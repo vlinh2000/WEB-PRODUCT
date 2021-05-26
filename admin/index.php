@@ -1,3 +1,15 @@
+<?php
+session_start();
+//CHECK LOGIN
+if(!isset($_SESSION['IdAdmin'])) header("location:login.php");
+//LOG OUT
+if(isset($_GET['action']) && $_GET['action'] == 'logout'){
+    unset($_SESSION['IdAdmin']);
+    unset($_SESSION['HoTenNV']);
+    header("location:index.php");
+} 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,8 +54,15 @@
                             </button>
                         </form>
                     </li>
-                    <li>
-                        <i class="fa fa-user iconUser"></i>
+                    <li class='user-info'>
+                        <i class="fa fa-user iconUser" onclick="viewInfo()"></i>
+                        <div class='info-admin'>       
+                            <?php if($_SESSION['IdAdmin'] == 'NV15806194') echo '<div><img src="../img/avtAdminroot.jpg" alt="avt"><span>'.$_SESSION['HoTenNV'].'</span></div>'; 
+                            else  echo '<div><img src="../img/avtAdminDefault.png" alt="avt"><span>'.$_SESSION['HoTenNV'].'</span></div>';
+                             ?>
+                            <a href='index.php?action=logout'>Đăng xuất</a>    
+                            <div class="triangle"></div>
+                        </div>
                     </li>
                 </div>
             </div>
@@ -118,6 +137,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script src="../lib/fontawesome-free-5.15.3-web/js/all.min.js"></script>
+    <script src="../lib/bootstrap-3.3.7-dist/js/jquery-360.min.js"></script>
     
 
 </body>

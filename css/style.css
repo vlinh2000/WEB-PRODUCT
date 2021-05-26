@@ -60,7 +60,7 @@ ul {
 } */
 
 .products-in-cart .null-cart {
-    max-height: 200px;
+    max-height: 300px;
     width: 400px;
     background-color: rgb(182, 242, 182);
 }

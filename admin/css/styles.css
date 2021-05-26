@@ -436,3 +436,88 @@ h1 {
     font-weight: bold;
     margin-bottom: 20px;
 }
+.login-admin {
+    height: 100vh;
+    /* background-color: rgba(91, 140, 232, 0.25); */
+    background-image: url("https://image.freepik.com/free-photo/distribution-light-signal-from-diode-towards-bunch-optical-fibers-3d-illustration_250994-2130.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.login-admin form {
+    width: 30%;
+    min-width: 300px;
+    padding: 0px 50px;
+    background-color: #fcfcfc;
+    border-radius: 5px;
+    margin: 120px auto;
+    text-align: center;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-admin form div {
+    display: flex;
+    align-items: center;
+}
+.loginBtn {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: none;
+    background-image: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: wheat;
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.login-admin form h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+.info-admin {
+    position: absolute;
+    min-width: 200px;
+    left: -155px;
+    top: 35px;
+    background-color: #fcfcfc;
+    padding: 0px 20px;
+    padding-top: 10px;
+    min-height: 100px;
+    flex-direction: column;
+    box-shadow: 1px 1px 10px 2px rgb(80, 79, 151);
+    display: none;
+    text-align: center;
+}
+.user-info {
+    position: relative;
+}
+.info-admin img {
+    width: 30px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.info-admin a {
+    text-decoration: none;
+    border-top: 1px solid #ddd;
+    display: block;
+    margin-top: 10px;
+    padding: 10px 0px;
+}
+.info-admin span {
+    font-size: 14px;
+    font-weight: bold;
+}
+.triangle {
+    position: absolute;
+    right: 6px;
+    top: -8px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #fcfcfc;
+}

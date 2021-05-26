@@ -49,7 +49,7 @@ function loadCart() {
             contentType: "application/x-www-form-urlencoded",
             data: { Cart: JSON.parse(localStorage.getItem('Cart')) },
             success: function (result) {
-                //
+                window.location.reload();
             }
         });
     }

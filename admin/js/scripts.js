@@ -77,7 +77,7 @@ function Delete(id) {
             contentType: "application/x-www-form-urlencoded",
             data: { action: "delete", id: id },
             success: function (result) {
-                $(".main").html(result);
+                window.location.reload();
             }
         });
     } else return;
@@ -286,17 +286,23 @@ function statistical(tongTien) {
     );
 }
 function statisticalBill() {
-    var TongHD = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    // var TongHD = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     var TongTien = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     $.ajax({
         type: 'GET',
         url: `order-detail.php?action=listBill`,
         contentType: "application/x-www-form-urlencoded",
         success: function (results) {
-            results.map((bill) => { TongHD[bill.Thang] = parseInt(bill.TongHD); TongTien[bill.Thang] = bill.TongTien });
+            results.map((bill) => { TongTien[bill.Thang - 1] = bill.TongTien });
             statistical(TongTien);
         }
     });
 
 }
 // new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'VND' }).format(bill.TongTien)
+var viewInfoStatus = false;
+function viewInfo() {
+    viewInfoStatus = !viewInfoStatus;
+    if (viewInfoStatus) $(".info-admin").show();
+    else $(".info-admin").hide();
+}
