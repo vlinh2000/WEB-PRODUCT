@@ -65,7 +65,7 @@
                         </ol>
                         <div class="carousel-inner" role="listbox">
                         <?php 
-                         include './mysql.php';
+                         include '../mysql.php';
                          $sql = 'select a.MSHH , sum(a.SoLuong) as SoLuong ,b.HinhAnh,b.TenHH,b.Gia  from chitietdathang a, HangHoa b where a.MSHH=b.MSHH group by a.MSHH';
                          $result = mysqli_query($conn,$sql);
                          $rowcount=mysqli_num_rows($result);
@@ -118,7 +118,7 @@
                    <div class="row mt-4">
 
                    <?php 
-                                        include './mysql.php';
+                                        include '../mysql.php';
                                         $sql = 'select MSHH,TenHH,Gia,HinhAnh from HangHoa ';
                                         $result = mysqli_query($conn,$sql);
                                         while($row=$result->fetch_assoc()){
@@ -131,8 +131,7 @@
                                                                 <strike class="old-price">'.number_format($row['Gia']+2000000,0,',','.').' ₫</strike> 
                                                             </div>
                                                             <div class="raiting-status">
-                                                                <span class="raiting"></span>
-                                                                <span class="num-raiting">6 đánh giá</span>
+                                                                <span class="raiting"></span>                                                             
                                                             </div>
                                                         </a>
                                                     </div>';

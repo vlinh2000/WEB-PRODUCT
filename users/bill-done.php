@@ -3,7 +3,7 @@ include './header.php';
 ?>
 <?php
 if(isset($_POST['SoDonDH'])){
-    include 'mysql.php';
+    include '../mysql.php';
     if(isset($_POST['NgayGH'])) $sql = "update dathang set TrangThai='".$_POST['TrangThai']."',NgayGH='".$_POST['NgayGH']."' where SoDonDH='".$_POST['SoDonDH']."'"; 
     else $sql = "update dathang set TrangThai='".$_POST['TrangThai']."' where SoDonDH='".$_POST['SoDonDH']."'"; 
     if (mysqli_query($conn, $sql)) {
@@ -17,7 +17,7 @@ if(isset($_POST['SoDonDH'])){
     <div class="container all-ordered">
         <h5 class="title-ordered">Hóa đơn của tôi</h5>
         <?php
-        include './mysql.php';
+        include '../mysql.php';
         if(!isset($_SESSION['ID'])) {
             header("location:login.php");
             return;

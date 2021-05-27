@@ -36,7 +36,7 @@ function addToCart(MSHH, action = 'ADD') {
         contentType: "application/x-www-form-urlencoded",
         data: { Cart: JSON.parse(localStorage.getItem('Cart')) },
         success: function (result) {
-            window.location.href = '/SHOPPINGWEB/cart.php';
+            window.location.href = '/SHOPPINGWEB/users/cart.php';
         }
     });
 }
@@ -67,7 +67,7 @@ function Delete(MSHH) {
         url: 'cart.php',
         data: data,
         success: function (result) {
-            window.location.href = '/SHOPPINGWEB/cart.php';
+            window.location.href = '/SHOPPINGWEB/users/cart.php';
         }
     });
 }

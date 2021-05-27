@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['txtName'])){
-    include 'mysql.php';
+    include '../mysql.php';
     
     $MSKH = 'KH'. rand(0,99999999);
     $sql = "insert into KhachHang values('"
@@ -42,9 +42,9 @@ if(isset($_POST['txtName'])){
     <title>Đăng ký tài khoản</title>
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="./lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./lib/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="../lib/fontawesome-free-5.15.3-web/css/all.min.css">
 </head>
 
 <body>

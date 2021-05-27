@@ -1,5 +1,5 @@
 
-                                        <?php          
+                                        <?php          //API TO GET DATA FOR VIEW DETAIL BILL
                                                    if(isset($_GET['SoDonDH'])){
                                                     header("Content-Type: application/json; charset=UTF-8");                
                                                     include '../mysql.php';
@@ -10,7 +10,7 @@
                                                     mysqli_close($conn);      
                                                     return;   
                                                    }      
-                                                   
+                                                   // API GET DATA FOR statistical
                                                    if(isset($_GET['action']) && $_GET['action']=='listBill'){
                                                     header("Content-Type: application/json; charset=UTF-8");                
                                                     include '../mysql.php';

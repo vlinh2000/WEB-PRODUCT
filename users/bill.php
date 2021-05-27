@@ -2,7 +2,7 @@
             include_once './header.php';
             if(!isset($_SESSION['ID'])) header("Location:login.php");
             if(isset($_GET['action']) && $_GET['action']=="confirm") {
-                include './mysql.php';
+                include '../mysql.php';
                 $SoDonDH = 'HD' . rand(0,9999999);
                 $date = getdate();
                 $NgayDH = $date['year'] . "/" . $date['mon'] . "/" . $date['mday'] ;

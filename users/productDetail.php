@@ -4,7 +4,7 @@
         <div class="container product-detail mb-4">
             <div class="row mt-2">
             <?php 
-                include './mysql.php';
+                include '../mysql.php';
                 $sql = 'select * from HangHoa where MSHH="'.$_GET['MSHH'].'"';
                 $result = mysqli_query($conn,$sql);
                 while($row=$result->fetch_assoc()){

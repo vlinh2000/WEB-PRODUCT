@@ -3,7 +3,7 @@ include './header.php';
 ?>
 <?php
 if(isset($_POST['UserName'])){
-    include 'mysql.php';
+    include '../mysql.php';
     $sql = "update khachhang set HoTenKH='".$_POST['HoTenKH']."' , TenCongTy='".$_POST['TenCongTy']."' ,SoDienThoai='".$_POST['SoDienThoai']."' ,Email='".$_POST['Email']."'  where MSKH='".$_SESSION['ID']."'"; 
     $check=false;
     if (mysqli_query($conn, $sql)) {
@@ -32,7 +32,7 @@ if(isset($_POST['UserName'])){
         <hr>
        <?php
             if(isset($check) && $check=true)echo '<p>Cập nhật thành công</p>';
-            include 'mysql.php';
+            include '../mysql.php';
             $sql = "select a.HoTenKH , a.SoDienThoai , a.Email , a.UserName ,a.TenCongTy , b.DiaChi  from khachhang a , diachikh b where  a.MSKH = b.MSKH and a.MSKH='".$_SESSION['ID']."'"; 
             $result = mysqli_query($conn,$sql);
             while($row=$result->fetch_assoc()){

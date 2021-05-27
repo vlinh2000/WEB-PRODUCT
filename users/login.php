@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['txtUsername'])){
-    include 'mysql.php';
+    include '../mysql.php';
     $sql = "select a.MSKH,a.HoTenKH,a.SoDienThoai,a.UserName,a.PassWord ,b.DiaChi from KhachHang a, DiaChiKH b where a.MSKH=b.MSKH and a.UserName='". $_POST['txtUsername']."'";
     $result = mysqli_query($conn,$sql);
     $row =mysqli_fetch_array($result);
@@ -31,9 +31,9 @@ if(isset($_POST['txtUsername'])){
     <title>Login</title>
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="./lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./lib/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="../lib/fontawesome-free-5.15.3-web/css/all.min.css">
 </head>
 
 <body>
@@ -42,11 +42,11 @@ if(isset($_POST['txtUsername'])){
             <legend>Đăng nhập</legend>
             <div class="form-group ">
                 <i class="far fa-user"></i>
-                <input type="text" class="form-control" name="txtUsername" placeholder="Username">
+                <input type="text" class="form-control" name="txtUsername" placeholder="Username" required> 
             </div>
             <div class="form-group ">
                 <i class="fas fa-lock"></i>
-                <input type="password" class="form-control" name="txtPassword" placeholder="Password">
+                <input type="password" class="form-control" name="txtPassword" placeholder="Password" required>
             </div>
             <button type="submit" class="login">Đăng nhập</button>
             <div class="register">

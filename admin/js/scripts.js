@@ -52,7 +52,7 @@ function add() {
     //show and hide form 
     if (arguments.length == 0) {
         $(".panel-title").html($(".panel-title").html().replace("Sửa", "Thêm"));
-        if ($("#product")) $("#product").remove();
+        if ($("#list-products")) $("#list-products").html("");
     }
     window.scrollTo(0, 0); // scroll on top 
     $(".formAdd").show();
@@ -143,7 +143,7 @@ function fillPrice(parentTag, selectTag, MSHH) {
                     <input type="number" class="form-control ml-2 mr-2" name='Gia[]' required readonly  placeholder="Giá" id="${priceTag.id}" value="${priceTag.id}">
                     <input type="number" class="form-control" name='SoLuong[]' required  placeholder="SL" min="1" value="1" onchange="fillPriceWithNum(this.parentElement.children[1],this.value)">
                 </div>  `;
-    parentTag.innerHTML += newField;
+    parentTag.lastElementChild.innerHTML += newField;
     fillTotal();
 }
 function fillPriceWithNum(inputPrice, num) {
@@ -216,7 +216,6 @@ function updateForBill(listInfo) {
     }
     addNewField(listInfo[0]);
     add("updateOrder");
-    $("#product").remove();
     $.ajax({
         type: 'GET',
         url: `order-detail.php?SoDonDH=${listInfo[0]}`,
@@ -228,6 +227,7 @@ function updateForBill(listInfo) {
             <input type="number" class="form-control" name='SoLuong[]' required  placeholder="SL" min="1" onchange="fillPriceWithNum(this.parentElement.children[1],this.value)" value="${product.SoLuong}">
             <i class="fas fa-trash remove-product-icon" onclick="removeProduct(this.parentElement.className)"></i>
             </div>`).join("");
+            $("#list-products").html(" ");
             $("#list-products").html(products);
         }
     });

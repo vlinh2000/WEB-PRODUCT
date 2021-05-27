@@ -21,10 +21,10 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout'){
     <!-- <link rel="stylesheet" href="./lib/bootstrap-3.3.7-dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./lib/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="../lib/fontawesome-free-5.15.3-web/css/all.min.css">
     <link rel="stylesheet" href="./css/mediaquery.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="./lib/bootstrap-3.3.7-dist/js/jquery-360.min.js"></script>
+    <script src="../lib/bootstrap-3.3.7-dist/js/jquery-360.min.js"></script>
     <script type="text/javascript" src="./js/allFun.js"></script>
 </head>
 <?php if(!isset($_SESSION['Cart'])) echo '<script>loadCart();</script>'; ?>

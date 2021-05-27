@@ -57,8 +57,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout'){
                     <li class='user-info'>
                         <i class="fa fa-user iconUser" onclick="viewInfo()"></i>
                         <div class='info-admin'>       
-                            <?php if($_SESSION['IdAdmin'] == 'NV15806194') echo '<div><img src="../img/avtAdminroot.jpg" alt="avt"><span>'.$_SESSION['HoTenNV'].'</span></div>'; 
-                            else  echo '<div><img src="../img/avtAdminDefault.png" alt="avt"><span>'.$_SESSION['HoTenNV'].'</span></div>';
+                            <?php if($_SESSION['IdAdmin'] == 'NV15806194') echo '<div><img src="./img/avtAdminroot.jpg" alt="avt"><span>'.$_SESSION['HoTenNV'].'</span></div>'; 
+                            else  echo '<div><img src="./img/avtAdminDefault.png" alt="avt"><span>'.$_SESSION['HoTenNV'].'</span></div>';
                              ?>
                             <a href='index.php?action=logout'>Đăng xuất</a>    
                             <div class="triangle"></div>
