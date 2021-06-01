@@ -69,7 +69,7 @@ ul {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 3;
+    z-index: 1024;
 }
 
 .new-navbar {
@@ -91,7 +91,7 @@ ul {
     position: relative;
     text-decoration: none;
     color: #ddd;
-    padding: 4px 20px;
+    padding: 3px 20px;
     border: #dfbf61 1px solid;
     display: block;
 }
@@ -250,6 +250,7 @@ ul {
 .banner img {
     width: 100%;
     margin-bottom: 5px;
+    max-height: 100px;
 }
 
 .product-sale {
@@ -740,6 +741,7 @@ a.phone .price {
 .cart-detail .table th {
     color: #ccc;
 }
+
 .bill a {
     border: none;
     padding: 7px 30px;
@@ -781,7 +783,7 @@ a.phone .price {
 .fa-plus-square,
 .fa-minus-square {
     cursor: pointer;
-    color: #8950fc;
+    color: #666;
     font-size: 18px;
 }
 .action-Icon-Delete {
@@ -1052,11 +1054,11 @@ a.phone .price {
 .confirm {
     padding: 30px 30px;
     background-color: #eee;
-    width: 20%;
+    min-width: 20%;
     text-align: center;
     border-radius: 5px;
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 40%;
     box-shadow: 1px 1px 10px 2px;
     display: none;

@@ -4,8 +4,7 @@ include './header.php';
 <?php
 if(isset($_POST['SoDonDH'])){
     include '../mysql.php';
-    if(isset($_POST['NgayGH'])) $sql = "update dathang set TrangThai='".$_POST['TrangThai']."',NgayGH='".$_POST['NgayGH']."' where SoDonDH='".$_POST['SoDonDH']."'"; 
-    else $sql = "update dathang set TrangThai='".$_POST['TrangThai']."' where SoDonDH='".$_POST['SoDonDH']."'"; 
+    $sql = "update dathang set TrangThai='".$_POST['TrangThai']."',NgayGH='".$_POST['NgayGH']."' where SoDonDH='".$_POST['SoDonDH']."'"; 
     if (mysqli_query($conn, $sql)) {
      } else {
         echo "Error: " . $sql . "" . mysqli_error($conn);
@@ -52,9 +51,10 @@ if(isset($_POST['SoDonDH'])){
                          echo '</table>
                              <hr>
                              <div class="date-total">
-                             <p><span>Ngày mua hàng: </span><span>'.$row['NgayDH'].'</span></p>
-                             <p><span>Ngày giao hàng dự kiến: </span><span>'.$row['NgayGH'].'</span></p>
-                             <p><span>Phí vận chuyển: </span><span>₫ 30.000</span></p>
+                             <p><span>Ngày mua hàng: </span><span>'.$row['NgayDH'].'</span></p>';
+                         if($row['TrangThai']=='Đã giao') echo '<p><span>Ngày giao hàng: </span><span>'.$row['NgayGH'].'</span></p>';
+                         else echo '<p><span>Ngày giao hàng dự kiến: </span><span>'.$row['NgayGH'].'</span></p>';
+                         echo  '<p><span>Phí vận chuyển: </span><span>₫ 30.000</span></p>
                              <p><span>Tổng tiền:</span><span class="total">₫ '.number_format($row['TongTien'],0,',','.').'</span></p>';
                              if($row['TrangThai']=='Chờ xác nhận') echo '<p><span class="btn-cancel" id="'.$row['SoDonDH'].'" onclick="cancled(this.id)">Hủy đơn hàng</span></p>';
                            echo '  </div>

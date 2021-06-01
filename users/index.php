@@ -37,15 +37,15 @@
                 </div>
 
 
-                <div class="d-{xl}-none col-xl-4 p-0">
+                <div class="col-xl-4 p-0" id="list-banner">
                     <div class="banner">
                         <img src="https://cdn.tgdd.vn/2021/03/banner/a02-398-110-398x110-5.png" alt="banner1">
-                        <img src="https://cdn.tgdd.vn/2021/03/banner/iphone-chung-398-110-398x110-2.png" alt="banner2">
-                        <img src="https://cdn.tgdd.vn/2020/11/banner/IntelEvo-390x80.png" alt="banner3">
+                        <img src="https://cdn.tgdd.vn/2021/05/banner/note20-390-97-390x97-2.png" alt="banner2">
+                        <img src="https://cdn.tgdd.vn/2021/05/banner/sticky-A15-15s-390-97-390x97.png" alt="banner3">
                     </div>
                 </div>
                 
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2 mb-4 p-0">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-2 mb-4 p-0" id="list-banner">
                     <img src="https://cdn.tgdd.vn/2021/04/banner/1200-75-1200x75-3.png" alt="banner4" width='99.9%' >
                 </div>
                 

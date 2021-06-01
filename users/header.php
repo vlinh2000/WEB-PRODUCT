@@ -62,7 +62,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout'){
                                 foreach ($_SESSION['Cart'] as $product) {
                                 echo '<li class="product">
                                     <img width="40px" heigh="50px" src="'.$product['HinhAnh'].'" alt="pd1">
-                                    <span class="name-phone">'.substr($product['TenHH'],0,31).'... </span> 
+                                    <span class="name-phone">'.substr($product['TenHH'],0,30).'... </span> 
                                     <span class="price-phone">₫ '.number_format((int)$product['Gia'],0,',','.').'</span>
                                     </li>';
                                     if($i==2) break;

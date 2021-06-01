@@ -19,38 +19,9 @@
         width: 30%;
         float: left;
     }
-    /* // .new-navbar > .search-navbar > .form-search {
-    //     display: flex;
-    // }
-    // .new-navbar > .search-navbar > .form-search > input {
-    //     width: 100%;
-    // }
-    // .new-navbar > .cart {
-    //     padding-top: 20px;
-    //     display: inline;
-    //     float: left;
-    //     margin-left: 40%;
-    //     padding-bottom: 10px;
-    // }
-    // .new-navbar > .in-out {
-    //     margin-right: 20%;
-    //     padding-top: 20px;
-    //     display: inline;
-    //     float: right;
-    //     padding-bottom: 10px;
-    // }
-    // .main {
-    //     margin-top: 80px;
-    // }
-    // .products-in-cart {
-    //     z-index: 3;
-    //     transform: translate(50%, -10%);
-    // }
-    // .cart > .triangle {
-    //     right: 0px;
-    //     bottom: 1px;
-    // }
-    // .banner {
-    //     display: none;
-    // } */
+}
+@media only screen and (max-width: 1200px) {
+    #list-banner {
+        display: none;
+    }
 }

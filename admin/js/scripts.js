@@ -1,3 +1,9 @@
+
+Date.prototype.increaseDay = function (days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+}
 function statusGoods(SoDonDH) {
     window.scrollTo(0, 0); // scroll on top 
     $('body').css('overflow', 'hidden')
@@ -5,10 +11,11 @@ function statusGoods(SoDonDH) {
     $("#wrapper").addClass("background");
     $('#confirmBtn').click(function () {
         var d = new Date();
-        var ngayGH = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + (d.getDate() + 2);
+        d = d.increaseDay(2);
+        var ngayGH = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + (d.getDate());
         $.ajax({
             type: 'POST',
-            url: '../bill-done.php',
+            url: '../users/bill-done.php',
             data: { TrangThai: "Đang vận chuyển", SoDonDH: SoDonDH, NgayGH: ngayGH },
             success: function (result) {
                 window.location.reload();
@@ -275,7 +282,7 @@ function statistical(tongTien) {
                 },
                 title: {
                     display: true,
-                    text: 'Doanh thu hàng tháng'
+                    text: 'Doanh thu hàng tháng  (đơn vị : VNĐ)'
                 }
             }
         },

@@ -78,10 +78,12 @@ function statusGoods(SoDonDH) {
     $(".confirm").show();
     $("#wrapper").addClass("background");
     $('#receivedBtn').click(function () {
+        var d = new Date();
+        var ngayGH = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + (d.getDate());
         $.ajax({
             type: 'POST',
             url: 'bill-done.php',
-            data: { TrangThai: "Đã giao", SoDonDH: SoDonDH },
+            data: { TrangThai: "Đã giao", SoDonDH: SoDonDH, NgayGH: ngayGH },
             success: function (result) {
                 window.location.reload();
             }
