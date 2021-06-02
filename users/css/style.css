@@ -733,7 +733,7 @@ a.phone .price {
     background-color: #fff !important;
     padding: 0px 10px;
     font-size: 15px;
-    min-height: 30vh;
+    min-height: 41vh;
 }
 .cart-detail .table {
     background-color: #fff !important;
@@ -1074,4 +1074,10 @@ a.phone .price {
     height: 100%;
     background-color: rgba(31, 34, 46, 0.8);
     z-index: 1;
+}
+.not-add {
+    font-size: 12px;
+}
+.not-products {
+    display: none;
 }

@@ -46,11 +46,11 @@
                                 $STT++;
                                 $total+=(int)$product['Gia'] * (int)$product['SoLuong'];
                         }
-                        if(count($_SESSION['Cart'])==0 ) echo '<tr><td rowspan="5">Chưa thêm sản phẩm vào giỏ hàng</td></tr>';
+                        if(count($_SESSION['Cart'])==0 ) echo '<tr><td rowspan="5" class="not-add">Chưa thêm sản phẩm vào giỏ hàng</td></tr>';
                      ?>                            
                 </table>
                 </div>
-                <div class="bill">
+                <div class= <?php echo (count($_SESSION['Cart'])!=0) ? 'bill':'not-products'?>>
                     <span class="total">Tổng tiền (<?php echo isset($_SESSION['Cart']) ? count($_SESSION['Cart']) : 0 ;echo ' sản phẩm) : ' . number_format($total,0,',','.'). ' đ</span>';?>
                     <a href='bill.php'>Mua hàng</a>
                 </div>
