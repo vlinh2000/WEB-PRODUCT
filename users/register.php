@@ -147,16 +147,19 @@ if(isset($_POST['txtName'])){
         registerForm.addEventListener('submit',function(e){
             e.preventDefault();
         });
-        if(Object.keys(check).length === 7){
+            if(Object.keys(check).length === 8){
              for([key,value] of Object.entries(check)){
                  if(value === false) {
                     const input = document.getElementById(key).children[1];
                     input.focus();
-                    return;
+                     return;
                  }
              }
+             registerForm.submit();
+        }else {
+            alert("Vui lòng điền đầy đủ thông tin !");
+            return;
         }
-       registerForm.submit();
        }
     </script>
 </body>
