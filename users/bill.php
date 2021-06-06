@@ -1,7 +1,7 @@
 <?php
             include_once './header.php';
             if(count($_SESSION['Cart'])==0 ) header("Location:cart.php");
-            if(!isset($_SESSION['ID'])) header("Location:login.php");
+            if(!isset($_SESSION['ID'])) echo '<script>window.location="login.php"</script>';
             if(isset($_GET['action']) && $_GET['action']=="confirm") {
                 include '../mysql.php';
                 $SoDonDH = 'HD' . rand(0,9999999);
